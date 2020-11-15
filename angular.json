@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "doctoria"
+    }
+  },
+  "defaultProject": "doctoria",
+  "cli": {
+    "analytics": false
+  }
 }
