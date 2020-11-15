@@ -1,0 +1,176 @@
+
+* {
+    box-sizing: border-box;
+    font-family: preconnect;
+  }
+  body {
+background: white;
+height: 100%;
+margin: 0;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+
+
+label {
+    padding-top: 10px;
+    display: inline-block;
+    color: black;
+    font-weight:bold;
+
+  }
+
+
+  .content {
+padding: 2em;
+margin-top: 2em;
+margin-bottom: 5em;
+margin-right: 20px;
+margin-left: 20px;
+margin: 0 60px;
+border: 2px solid rgba(165, 162, 162, 1);
+border-radius: 1em;
+
+}
+
+  .col-25 {
+    float: left;
+    width: 40%;
+    margin-top: 12px;
+  }
+
+
+  .col-75 {
+    float: left;
+    width: 90%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+.center {
+
+  width: 50%;
+  margin-left : auto;
+  margin-right: auto;
+
+  padding: 10px;
+}
+
+.m{
+
+  width: 300px;
+  margin: auto;
+
+}
+div.transbox {
+  margin: 0 60px;
+  background-color:  rgba(165, 162, 162, 0.4);
+  border: 2px solid rgba(165, 162, 162, 1);
+  border-radius: 1em;
+
+}
+
+div.transbox p {
+  margin: 0 5%;
+  font-weight: bold;
+  color: white;
+
+}
+div.transbox2 {
+  margin: 0 60px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  rgba(165, 162, 162, 0.4);
+  border: 2px solid rgba(165, 162, 162, 1);
+  border-radius: 1em;
+
+}
+
+div.transbox2 p {
+  margin: 0 5%;
+  font-weight: bold;
+  color: white;
+
+}
+.end{
+  font-size: 30px;
+
+}
+
+.heading1{
+  color: #002080;
+  padding: 2px;
+  font-weight:bold;
+}
+
+.heading2{
+  color: #002080;
+  padding: 2px;
+  font-weight:bold;
+  margin-bottom: 20px;
+}
+
+.nextButton{
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  background: none;
+  border: 1px solid #111;
+  background: #002080;
+  transition: all 0.5s;
+  color: #ddd;
+}
+
+
+.outtermain{
+  background-color:  #ddd;
+  border: 2px solid rgba(165, 162, 162, 1);
+  border-radius: 1em;
+  padding: 2em;
+  width: 90%;
+
+}
+
+#name , #password ,#email ,#gender,#confirmpassword,#phone, #birthdate, #accounttype,#specialization,#city{
+  background: white;
+  color: black;
+  height: 40px;
+  width: 100%;
+}
+
+option{
+  color: black;
+}
+
+
+.form-group{
+  margin: 0 35px;
+}
+.padding{
+  margin-top: 5px;
+}
+
+.heading{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #ddd;
+  font-weight:bold;
+}
