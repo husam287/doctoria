@@ -1,1 +1,105 @@
-<p>workouts works!</p>
+<div class="container-fluid p-3 background_workout text-center text-white">
+    <div class="container">
+        <div>
+            <h2 class="font-weight-bold">Let's get fit and do some Exercises....!</h2>
+        </div>
+
+
+        <div id="carouselExampleIndicators_workout" class="carousel slide center_image container-sm"
+            data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div>
+                        <h3 class="font-weight-bold">30-Min Cardio-Start</h3>
+
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/50kH47ZztHs" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="font-weight-bold">Arm Workout -- Dumbbells Only</h3>
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/UY6-JzdnHUM" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="font-weight-bold">Bench Workout -- Dumbbells Only</h3>
+
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/hyiEGNc1Yy4" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="font-weight-bold">Back Workout -- Dumbbells Only</h3>
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/DMszKB_nk-0" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="font-weight-bold">Shoulder Workout -- Dumbbells Only</h3>
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/S6F5kX-728Y" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="font-weight-bold">Abdomen Workout -- Dumbbells Only</h3>
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/yPrsuV3E-Dc" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="font-weight-bold">Legs Workout -- Dumbbells Only</h3>
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/DpDsRqQ6Bcc" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators_workout" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators_workout" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    $('video').on('play', function (e) {
+        $("#carouselExampleIndicators_workout").carousel('pause');
+    });
+    $('video').on('stop pause ended', function (e) {
+        $("#carouselExampleIndicators_workout").carousel();
+    });
+    $('video').on('play', function (e) {
+        $("#carouselExampleIndicators").carousel('pause');
+    });
+    $('video').on('stop pause ended', function (e) {
+        $("#carouselExampleIndicators").carousel();
+    });
+</script>

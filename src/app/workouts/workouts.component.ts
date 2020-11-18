@@ -9,7 +9,9 @@ export class WorkoutsComponent implements OnInit {
 
   constructor() { }
 
+  
   ngOnInit(): void {
   }
 
 }
+
