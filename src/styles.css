@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*orange	#d84f03
+main blue: #038cd8
+darker blue (button hoover): #0376b6 */
+
+*{
+    font-family: 'Space Grotesk', sans-serif;
+}
