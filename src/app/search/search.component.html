@@ -1,0 +1,29 @@
+<html>
+   <body>
+       <head>
+           <script>
+               $('.dropdown-menu li').on('click', function() {
+        var getValue = $(this).text();
+        $('.dropdown-select').text(getValue);
+      });
+           </script>
+       </head>
+        <div class="container">
+        <div class="row">
+        <div class="col-xs-12">
+        <div class="dropdown">
+        <button id="dLabel" class="dropdown-select"style="color:grey" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Search  <i class="fa fa-chevron-down " style="float: right;"></i>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+            <li>Name</li>
+            <li>Area</li>
+            <li>Specialization</li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+    </body>
+</html>
