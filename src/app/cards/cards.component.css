@@ -1,0 +1,21 @@
+img{
+    border-radius: 50%;
+    margin: 5px;
+}
+.row{
+    border: 3px solid black;
+    width: 60%;
+    height: auto;
+    float: right;
+    margin-right: 20px;
+    background-color: blanchedalmond;
+}
+ul{
+    list-style: none;
+}
+.book{
+    margin: 5px;
+}
+.row:hover{
+    background-color: cornsilk;
+}

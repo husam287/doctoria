@@ -1,0 +1,15 @@
+ul li{
+    margin: 5px;
+    list-style: none;
+}
+ul{
+    border: 3px solid slateblue;
+    width: 30%;
+    height: 400px;
+    padding: 5px;
+    background-color: bisque;
+}
+ul:hover{
+    background-color: blanchedalmond;
+}
+
