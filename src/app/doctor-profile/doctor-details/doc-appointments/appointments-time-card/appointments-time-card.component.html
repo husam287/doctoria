@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 col-8">
+        <div class="card text-center">
+            <h5 class="card-header bg-primary text-light">Today</h5>
+            <div class="card-body p-1">
+                <ul class="list-group list-group-flush" style="height:30rem; overflow-y: scroll;">
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">12:00 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">12:30 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal" [disabled]="true">1:00 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">1:30 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">2:00 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">2:30 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">3:00 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal" [disabled]="true">3:30 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">1:30 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">2:00 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">2:30 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal">3:00 PM</button>
+                    <button class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal" [disabled]="true">3:30 PM</button>
+                </ul>
+            </div>
+        </div>
+        <app-appointments-checkout [date]="'2020/12/4'" [time]="'12:00 PM'"></app-appointments-checkout>
+    </div>
+</div>

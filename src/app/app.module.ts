@@ -9,6 +9,8 @@ import { DoctorDetailsComponent } from './doctor-profile/doctor-details/doctor-d
 import { DocInfoComponent } from './doctor-profile/doctor-details/doc-info/doc-info.component';
 import { DocAppointmentsComponent } from './doctor-profile/doctor-details/doc-appointments/doc-appointments.component';
 import { DocReviewsComponent } from './doctor-profile/doctor-details/doc-reviews/doc-reviews.component';
+import { AppointmentsTimeCardComponent } from './doctor-profile/doctor-details/doc-appointments/appointments-time-card/appointments-time-card.component';
+import { AppointmentsCheckoutComponent } from './doctor-profile/doctor-details/doc-appointments/appointments-checkout/appointments-checkout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DocReviewsComponent } from './doctor-profile/doctor-details/doc-reviews
     DoctorDetailsComponent,
     DocInfoComponent,
     DocAppointmentsComponent,
-    DocReviewsComponent
+    DocReviewsComponent,
+    AppointmentsTimeCardComponent,
+    AppointmentsCheckoutComponent
   ],
   imports: [
     BrowserModule,

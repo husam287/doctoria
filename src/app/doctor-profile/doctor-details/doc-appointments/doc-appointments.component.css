@@ -1,0 +1,24 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    background-image: none;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #038cd8;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #038cd8;
+}
+
+.carousel-indicators{
+  bottom: -25px;
+}
+
+.carousel-indicators li{
+  background-color: #d84f03;
+}
