@@ -1,49 +1,33 @@
 <div class="container">
-    <ul>
-        <li>
-                <!-- Default dropright button -->
-            <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    City
-                </button>
-            <div class="dropdown-menu">
-                    <!-- Dropdown menu links -->
-                <a class="dropdown-item" href="#">Cairo</a>
-                <a class="dropdown-item" href="#">Giza</a>
-                <a class="dropdown-item" href="#">Alex</a>
-            </div>
-            </div>
-        </li>
+                                         
+    <div class="dropdown city col-sm-4">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        City
+      </button>
+      
+      <form class="dropdown-menu">
+          <input class="dropdown-item" type="checkbox" id="city1" name="city-1" value="Cairo">
+          <label for="city1">Cairo</label>
+          <input class="dropdown-item" type="checkbox" id="city2" name="city-2" value="Giza">
+          <label for="city2">Giza</label>
+          <input class="dropdown-item" type="checkbox" id="city3" name="city-3" value="Alex">
+          <label for="city3">Alex</label>
+          <input class="dropdown-item" type="checkbox" id="city4" name="city-4" value="Luxor">
+          <label for="city4">Luxor</label>
+      </form>
+    </div>
 
-        <li>
-                <!-- Default dropright button -->
-            <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Gender
-                </button>
-                <div class="dropdown-menu">
-                    <!-- Dropdown menu links -->
-                    <a class="dropdown-item" href="#">Male</a>
-                    <a class="dropdown-item" href="#">Female</a>
-                </div>
-            </div>
-        </li>
-
-        <li>
-                <!-- Default dropright button -->
-            <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    specialist
-                </button>
-            <div class="dropdown-menu">
-                <!-- Dropdown menu links -->
-                <a class="dropdown-item" href="#">Pediatrics</a>
-                <a class="dropdown-item" href="#">dentist</a>
-                <a class="dropdown-item" href="#">Heart Surgery</a>
-                <a class="dropdown-item" href="#">Psychiatry</a>
-            </div>
-            </div>
-        </li>
-    </ul>   
+    <div class="dropdown gender">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Gender
+        </button>
+        
+        <form class="dropdown-menu">
+            <input class="dropdown-item" type="checkbox" id="gender1" name="gender-1" value="male">
+            <label for="gender1">Male</label>
+            <input class="dropdown-item" type="checkbox" id="gender2" name="gender-2" value="female">
+            <label for="gender2">Female</label>
+        </form>
+      </div>
 
 </div>
