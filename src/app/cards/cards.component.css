@@ -12,6 +12,7 @@ img{
 }
 ul{
     list-style: none;
+    align-content: flex-start;
 }
 /* .book{
     margin: 5px;
