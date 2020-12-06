@@ -1,14 +1,24 @@
-<body>
-    <div>
-      <div class="topnav" id="myTopnav"style="display:flex">
-        <a style="flex-grow: 1; font-family: Georgia, 'Times New Roman', Times, serif;"><p style="width: 15%; font-size: 21px; cursor: pointer;"><i class="fa fa-heartbeat" style="color:red;"></i><b>DOCT</b>oria</p></a>
-        <a style="flex-grow: 0;" href="#home" class=" active"><i class="fa fa-home"></i> Home</a>
-        <a style="flex-grow: 0;" class=" hover" href="#all-doctors"><i class="fa fa-user-md"></i> All Doctors</a>
-        <a style="flex-grow: 0;" class=" hover" href="#sign-up"><i class="fa fa-sign-in"></i> Sign Up</a>
-        <a style="flex-grow: 0;" class=" hover" href="#log-in"><i class="fa fa-user"></i> Log In</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class=" hover fa fa-bars"></i>
-        </a>
-      </div>
-    </div>
-</body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-fill">
+  <a class="navbar-brand   p-2 " href="#"><i class="fa fa-heartbeat" style="color:red;"></i>DOCtoria</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active p-2">
+        <a class="nav-link  " href="#"><i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+
+      </li>
+      <li class="nav-item  p-2">
+        <a class="nav-link  " href="#"><i class="fa fa-user-md"></i>All Doctors</a>
+      </li>
+      <li class="nav-item  p-2">
+        <a class="nav-link" href="#"><i class="fa fa-sign-in"></i>Sign Up </a>
+      </li>
+      <li class="nav-item  p-2">
+        <a class="nav-link " href="#"><i class="fa fa-user"></i>Log In</a>
+      </li>
+    </ul>
+  </div>
+</nav>
