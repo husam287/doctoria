@@ -11,6 +11,9 @@ import { DocAppointmentsComponent } from './doctor-profile/doctor-details/doc-ap
 import { DocReviewsComponent } from './doctor-profile/doctor-details/doc-reviews/doc-reviews.component';
 import { AppointmentsTimeCardComponent } from './doctor-profile/doctor-details/doc-appointments/appointments-time-card/appointments-time-card.component';
 import { AppointmentsCheckoutComponent } from './doctor-profile/doctor-details/doc-appointments/appointments-checkout/appointments-checkout.component';
+import { ReviewComponent } from './doctor-profile/doctor-details/doc-reviews/review/review.component';
+import { AddReviewComponent } from './doctor-profile/doctor-details/doc-reviews/add-review/add-review.component';
+import { StarsComponent } from './doctor-profile/doctor-details/doc-reviews/review/stars/stars.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AppointmentsCheckoutComponent } from './doctor-profile/doctor-details/d
     DocAppointmentsComponent,
     DocReviewsComponent,
     AppointmentsTimeCardComponent,
-    AppointmentsCheckoutComponent
+    AppointmentsCheckoutComponent,
+    ReviewComponent,
+    AddReviewComponent,
+    StarsComponent,
   ],
   imports: [
     BrowserModule,
