@@ -7,6 +7,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
