@@ -20,3 +20,11 @@ ul{
 .row:hover{
     background-color: #FAF4D0;
 }
+
+button{
+    background-color:#F4F7BE;
+    color: black;
+    }
+  button:hover{
+    background-color: #AB9B96;
+  }
