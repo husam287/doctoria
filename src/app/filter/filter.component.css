@@ -1,4 +1,4 @@
-input[type=checkbox] + label {
+/* input[type=checkbox] + label {
     display: block;
     margin: 0.2em;
     cursor: pointer;
@@ -51,15 +51,32 @@ input[type=checkbox] + label {
     padding: 5px;
     padding-left: 0px;
     
-  }
+  } */
   
-  .row:hover{
+  .card:hover{
     background-color:#FDF5BF
   }
-  button{
+  .card{
+    background-color: rgb(192, 215, 245);
+  }
+  /* button{
     background-color:#F4F7BE;
     color: black;
     }
   button:hover{
+    background-color: #AB9B96;
+  } */
+
+
+
+  .custom-select{
+    margin-bottom: 10px;
+  }
+  select{
+    display: block;
+    background-color:#F4F7BE;
+  }
+
+  select:hover{
     background-color: #AB9B96;
   }
