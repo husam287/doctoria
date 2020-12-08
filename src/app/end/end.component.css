@@ -299,8 +299,8 @@ p {
 
   .dk-footer-form button[type=submit] {
     position: absolute;
-    top: -5px;
-    right: 0;
+    top: -6px;
+    right: -2px;
     padding: 11px 28px 14px 20px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
