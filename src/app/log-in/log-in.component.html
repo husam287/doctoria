@@ -25,23 +25,25 @@
 
  <!--form parts -->
   <div class="container outtermain">
-  <form>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
 
 <!--email -->
     <div class="form-group">
         <label>E-mail :</label>
-        <input class = "form-control form-control-sm" type="text" id="email" name="email" placeholder="example@domain.com" >
+        <input class = "form-control form-control-sm" type="text" id="email" name="email" placeholder="example@domain.com" ngModel required email #email="ngModel">
+        <span style="color:red;" class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
     </div>
 <!--Password -->
     <div class="form-group">
         <label>Password :</label>
-        <input class = "form-control form-control-sm"  maxlength="11" type="text" id="phone" name="phone">
+        <input class = "form-control form-control-sm"  maxlength="11" type="text" id="password" name="password" ngModel required>
     </div>
 
     <div class="text-center">
       <br>
-      <button class="btn nextButton" id = "7mada">Log in</button>
+      <button class="btn nextButton" id = "7mada" type="submit" [disabled]="!f.valid">Log in</button>
     </div>
+
   </form>
   </div>
 
