@@ -1,22 +1,11 @@
-img{
-    border-radius: 50%;
-    /* margin: 5px; */
-}
 .row{
-    /* border: 3px solid black;  */
-     /* width: 60%;
-    height: auto; */
-    /* float: right; */
-    /* margin-right: 20px; */
     background-color: #DFF0EA;
 }
 ul{
     list-style: none;
     align-content: flex-start;
 }
-/* .book{
-    margin: 5px;
-} */
+
 .row:hover{
     background-color: #FAF4D0;
 }
@@ -28,3 +17,11 @@ button{
   button:hover{
     background-color: #AB9B96;
   }
+
+
+
+h4{
+    vertical-align: super;
+    margin: 0;
+   }
+

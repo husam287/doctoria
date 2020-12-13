@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
 import { FilterComponent } from './filter/filter.component';
 import { DoctorsComponent } from './doctors/doctors.component';
+import { PatientCardComponent } from './patient-profile/patient-card/patient-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     FilterComponent,
-    DoctorsComponent
+    DoctorsComponent,
+    PatientCardComponent
   ],
   imports: [
     BrowserModule,
