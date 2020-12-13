@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "doctoria"
+    }
+  },
+  "defaultProject": "doctoria",
+  "cli": {
+    "analytics": "fb6865f7-84cd-44f7-8594-ff49834e3280"
+  }
 }
