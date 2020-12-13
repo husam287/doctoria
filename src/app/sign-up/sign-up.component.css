@@ -4,7 +4,7 @@
     font-family: preconnect;
   }
   body {
-background:  #ddd;
+background: white;
 height: 100%;
 margin: 0;
 background-repeat: no-repeat;
@@ -16,7 +16,7 @@ background-attachment: fixed;
 label {
     padding-top: 10px;
     display: inline-block;
-    color: black;
+    color: white;
     font-weight:bold;
 
   }
@@ -134,14 +134,14 @@ div.transbox2 p {
   margin-top: 10px;
   background: none;
   border: 1px solid #111;
-  background: #002080;
+  background: #C70039;
   transition: all 0.5s;
   color: #ddd;
 }
 
 
 .outtermain{
-  background-color: white;
+  background-color: #038cd8;
   border: 2px solid rgba(165, 162, 162, 1);
   border-radius: 1em;
   padding: 2em;

@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*pink	#C70039
+main blue: #038cd8
+darker blue (button hoover): #0376b6 */
+
+*{
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.pinkColor{
+    color: #C70039;
+}
+.pinkColor:hover{
+    color: #e90043;
+}
+.pinkBg{
+    background-color: #C70039;
+}
+.pinkBg:hover{
+    background-color:#e90043;
+}
+
+.blueColor{
+    color:#038cd8;
+
+}
+.blueBg{
+    background-color: #038cd8;
+
+}
+
+.blueShadow{
+    box-shadow: 0px 0px 5px 0px #038cd8;
+}
+.adjustVerticalText{
+ vertical-align: super;
+ margin-bottom: 0;
+}

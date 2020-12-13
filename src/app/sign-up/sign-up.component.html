@@ -16,16 +16,13 @@
   </head>
 
 
-  <body>
+  <body >
 
-  <div class="container m">
-    <h1 class="text-center heading1">Doctoria</h1>
-    <h1 class="text-center heading2">sign up form</h1>
-</div >
+<div><br><br> </div>
 
  <!--form parts -->
-  <div class="container outtermain">
-  <form (ngSubmit)="onSubmit()" #f1="ngForm">
+  <div class="container outtermain" >
+  <form (ngSubmit)="onSubmit()" #f1="ngForm" >
 <!--name -->
     <div class="form-group">
         <label >Name :</label>
@@ -76,7 +73,7 @@
       </div>
       <div class="text-center">
         <br>
-        <button class="btn nextButton" id = "7mada" type="submit" [disabled]="!f1.valid">Log in</button>
+        <button class="btn nextButton" id = "7mada" type="submit" [disabled]="!f1.valid">Sign Up</button>
       </div>
   </form>
 </div>
