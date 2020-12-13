@@ -8,6 +8,9 @@ import { AdvicesComponent } from './improve-your-body/advices/advices.component'
 import { WorkoutsComponent } from './improve-your-body/workouts/workouts.component';
 import { DietComponent } from './improve-your-body/diet/diet.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
