@@ -6,6 +6,8 @@ import { DocReviewsComponent } from './doctor-profile/doctor-details/doc-reviews
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 import { HomeComponent } from './home/home.component';
 import { ImproveYourBodyComponent } from './improve-your-body/improve-your-body.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full',component:HomeComponent},
@@ -14,7 +16,9 @@ const routes: Routes = [
     {path:'choose-appointment',component:DocAppointmentsComponent},
     {path:'reviews',component:DocReviewsComponent}
   ]},
-  {path:'improve-your-body',component:ImproveYourBodyComponent}
+  {path:'improve-your-body',component:ImproveYourBodyComponent},
+  {path:'login',component:LogInComponent},
+  {path:'signup',component:SignUpComponent}
 ];
 
 @NgModule({

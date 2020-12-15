@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,10 @@ import { EmailsComponent } from './home/emails/emails.component';
 import { SearchComponent } from './home/search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -46,10 +51,14 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     EmailsComponent,
     SearchComponent,
     FooterComponent,
-    NavBarComponent
+    NavBarComponent,
+    LogInComponent,
+    SignUpComponent,
+    PatientProfileComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
