@@ -4,6 +4,7 @@ import { DocAppointmentsComponent } from './doctor-profile/doctor-details/doc-ap
 import { DocInfoComponent } from './doctor-profile/doctor-details/doc-info/doc-info.component';
 import { DocReviewsComponent } from './doctor-profile/doctor-details/doc-reviews/doc-reviews.component';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { ImproveYourBodyComponent } from './improve-your-body/improve-your-body.component';
 
 const routes: Routes = [
   {path:'doctor-profile',component:DoctorProfileComponent,children:[
@@ -11,10 +12,11 @@ const routes: Routes = [
     {path:'choose-appointment',component:DocAppointmentsComponent},
     {path:'reviews',component:DocReviewsComponent}
   ]},
+  {path:'improve-your-body',component:ImproveYourBodyComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

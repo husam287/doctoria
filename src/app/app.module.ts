@@ -14,6 +14,13 @@ import { AppointmentsCheckoutComponent } from './doctor-profile/doctor-details/d
 import { ReviewComponent } from './doctor-profile/doctor-details/doc-reviews/review/review.component';
 import { AddReviewComponent } from './doctor-profile/doctor-details/doc-reviews/add-review/add-review.component';
 import { StarsComponent } from './doctor-profile/doctor-details/doc-reviews/review/stars/stars.component';
+import { ImproveYourBodyComponent } from './improve-your-body/improve-your-body.component';
+import { AdvicesComponent } from './improve-your-body/advices/advices.component';
+import { WorkoutsComponent } from './improve-your-body/workouts/workouts.component';
+import { DietComponent } from './improve-your-body/diet/diet.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -29,6 +36,10 @@ import { StarsComponent } from './doctor-profile/doctor-details/doc-reviews/revi
     ReviewComponent,
     AddReviewComponent,
     StarsComponent,
+    ImproveYourBodyComponent,
+    AdvicesComponent,
+    WorkoutsComponent,
+    DietComponent
   ],
   imports: [
     BrowserModule,
