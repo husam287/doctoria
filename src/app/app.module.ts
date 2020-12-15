@@ -18,9 +18,11 @@ import { ImproveYourBodyComponent } from './improve-your-body/improve-your-body.
 import { AdvicesComponent } from './improve-your-body/advices/advices.component';
 import { WorkoutsComponent } from './improve-your-body/workouts/workouts.component';
 import { DietComponent } from './improve-your-body/diet/diet.component';
-
-
-
+import { HomeComponent } from './home/home.component';
+import { EmailsComponent } from './home/emails/emails.component';
+import { SearchComponent } from './home/search/search.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,12 @@ import { DietComponent } from './improve-your-body/diet/diet.component';
     ImproveYourBodyComponent,
     AdvicesComponent,
     WorkoutsComponent,
-    DietComponent
+    DietComponent,
+    HomeComponent,
+    EmailsComponent,
+    SearchComponent,
+    FooterComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

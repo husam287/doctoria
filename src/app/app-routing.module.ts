@@ -4,9 +4,11 @@ import { DocAppointmentsComponent } from './doctor-profile/doctor-details/doc-ap
 import { DocInfoComponent } from './doctor-profile/doctor-details/doc-info/doc-info.component';
 import { DocReviewsComponent } from './doctor-profile/doctor-details/doc-reviews/doc-reviews.component';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { HomeComponent } from './home/home.component';
 import { ImproveYourBodyComponent } from './improve-your-body/improve-your-body.component';
 
 const routes: Routes = [
+  {path:'',pathMatch:'full',component:HomeComponent},
   {path:'doctor-profile',component:DoctorProfileComponent,children:[
     {path:'info',component:DocInfoComponent},
     {path:'choose-appointment',component:DocAppointmentsComponent},
