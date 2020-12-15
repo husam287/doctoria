@@ -4,17 +4,17 @@ import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
-import { DoctorCardComponent } from './doctor-profile/doctor-card/doctor-card.component';
-import { DoctorDetailsComponent } from './doctor-profile/doctor-details/doctor-details.component';
-import { DocInfoComponent } from './doctor-profile/doctor-details/doc-info/doc-info.component';
-import { DocAppointmentsComponent } from './doctor-profile/doctor-details/doc-appointments/doc-appointments.component';
-import { DocReviewsComponent } from './doctor-profile/doctor-details/doc-reviews/doc-reviews.component';
-import { AppointmentsTimeCardComponent } from './doctor-profile/doctor-details/doc-appointments/appointments-time-card/appointments-time-card.component';
-import { AppointmentsCheckoutComponent } from './doctor-profile/doctor-details/doc-appointments/appointments-checkout/appointments-checkout.component';
-import { ReviewComponent } from './doctor-profile/doctor-details/doc-reviews/review/review.component';
-import { AddReviewComponent } from './doctor-profile/doctor-details/doc-reviews/add-review/add-review.component';
-import { StarsComponent } from './doctor-profile/doctor-details/doc-reviews/review/stars/stars.component';
+import { DoctorProfileComponent } from './doctors/doctor-profile/doctor-profile.component';
+import { DoctorCardComponent } from './doctors/doctor-profile/doctor-card/doctor-card.component';
+import { DoctorDetailsComponent } from './doctors/doctor-profile/doctor-details/doctor-details.component';
+import { DocInfoComponent } from './doctors/doctor-profile/doctor-details/doc-info/doc-info.component';
+import { DocAppointmentsComponent } from './doctors/doctor-profile/doctor-details/doc-appointments/doc-appointments.component';
+import { DocReviewsComponent } from './doctors/doctor-profile/doctor-details/doc-reviews/doc-reviews.component';
+import { AppointmentsTimeCardComponent } from './doctors/doctor-profile/doctor-details/doc-appointments/appointments-time-card/appointments-time-card.component';
+import { AppointmentsCheckoutComponent } from './doctors/doctor-profile/doctor-details/doc-appointments/appointments-checkout/appointments-checkout.component';
+import { ReviewComponent } from './doctors/doctor-profile/doctor-details/doc-reviews/review/review.component';
+import { AddReviewComponent } from './doctors/doctor-profile/doctor-details/doc-reviews/add-review/add-review.component';
+import { StarsComponent } from './doctors/doctor-profile/doctor-details/doc-reviews/review/stars/stars.component';
 import { ImproveYourBodyComponent } from './improve-your-body/improve-your-body.component';
 import { AdvicesComponent } from './improve-your-body/advices/advices.component';
 import { WorkoutsComponent } from './improve-your-body/workouts/workouts.component';
@@ -28,6 +28,10 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 
+import { CardsComponent } from './doctors/cards/cards.component';
+import { FilterComponent } from './doctors/filter/filter.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { PatientCardComponent } from './patient-profile/patient-card/patient-card.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,11 @@ import { PatientProfileComponent } from './patient-profile/patient-profile.compo
     NavBarComponent,
     LogInComponent,
     SignUpComponent,
-    PatientProfileComponent
+    PatientProfileComponent,
+    CardsComponent,
+    FilterComponent,
+    DoctorsComponent,
+    PatientCardComponent
   ],
   imports: [
     BrowserModule,
