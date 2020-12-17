@@ -39,3 +39,9 @@ darker blue (button hoover): #0376b6 */
  vertical-align: super;
  margin-bottom: 0;
 }
+
+.verticalCenter{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

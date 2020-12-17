@@ -1,0 +1,18 @@
+<main class="container">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['info']" routerLinkActive="pinkColor">Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['choose-appointment']" routerLinkActive="pinkColor">Choose An Appointment</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['reviews']" routerLinkActive="pinkColor">Reviews</a>
+        </li>
+    </ul>
+
+    <router-outlet></router-outlet>
+
+
+</main>

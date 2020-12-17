@@ -1,0 +1,23 @@
+<div class="text-center modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100">Please, Give a <span class="text-warning">rate</span> for this doctor</h4>
+                <button type="button" #closeButton class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    
+            <div class="modal-body">
+                <form>
+                    <i *ngFor="let review of [0,1,2,3,4]" [id]="'star'+review" (click)="choosedRate=!choosedRate;" (mouseleave)="removeRate()" (mouseenter)="changeRate(review)"
+                    class="fas fa-star fa-2x"></i>
+                    <div class="form-group mt-3">
+                        <textarea placeholder="Write Your Comment Here" class="form-control text-center" name="comment" rows="2"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-outline-warning rounded-pill">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

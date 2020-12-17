@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './doctor-dashboard/home/home.component';
 import { AppointmentsComponent } from './doctor-dashboard/appointments/appointments.component';
 import { AllComponent } from './doctor-dashboard/appointments/all/all.component';
 import { PendingComponent } from './doctor-dashboard/appointments/pending/pending.component';
@@ -8,23 +7,56 @@ import { CompletedComponent } from './doctor-dashboard/appointments/completed/co
 import { ReferralsComponent } from './doctor-dashboard/appointments/referrals/referrals.component';
 import { PatientsComponent } from './doctor-dashboard/patients/patients.component';
 import { DocTimeslotsComponent } from './doctor-dashboard/doc-timeslots/doc-timeslots.component';
+import { DocAppointmentsComponent } from './doctors/doctor-profile/doctor-details/doc-appointments/doc-appointments.component';
+import { DocInfoComponent } from './doctors/doctor-profile/doctor-details/doc-info/doc-info.component';
+import { DocReviewsComponent } from './doctors/doctor-profile/doctor-details/doc-reviews/doc-reviews.component';
+import { DoctorProfileComponent } from './doctors/doctor-profile/doctor-profile.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { HomeComponent } from './home/home.component';
+import { ImproveYourBodyComponent } from './improve-your-body/improve-your-body.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { StatisticsComponent } from './doctor-dashboard/statistics/statistics.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'patients', component: PatientsComponent },
-  { path: 'doc-timeslots', component: DocTimeslotsComponent },
+  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: 'doctors', component: DoctorsComponent },
+  {
+    path: 'doctor-profile', component: DoctorProfileComponent, children: [
+      { path: 'info', component: DocInfoComponent },
+      { path: 'choose-appointment', component: DocAppointmentsComponent },
+      { path: 'reviews', component: DocReviewsComponent }
+    ]
+  },
+  { path: 'improve-your-body', component: ImproveYourBodyComponent },
+  { path: 'login', component: LogInComponent },
+  { path: 'signup', component: SignUpComponent },
+
+
 
   {
-    path: 'appointments', component: AppointmentsComponent, children: [
-      { path: 'all', component: AllComponent },
-      { path: 'pending', component: PendingComponent },
-      { path: 'completed', component: CompletedComponent },
-      { path: 'referrals', component: ReferralsComponent }
+    path: 'doc-dashboard', component: DoctorDashboardComponent, children: [
+      { path: 'statistics', component: StatisticsComponent },
+      { path: 'patients', component: PatientsComponent },
+      { path: 'doc-timeslots', component: DocTimeslotsComponent },
+
+      {
+        path: 'appointments', component: AppointmentsComponent, children: [
+          { path: 'all', component: AllComponent },
+          { path: 'pending', component: PendingComponent },
+          { path: 'completed', component: CompletedComponent },
+          { path: 'referrals', component: ReferralsComponent }
+        ]
+      }
+
+
+
     ]
   }
-
-
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
