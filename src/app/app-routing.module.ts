@@ -7,10 +7,12 @@ import { PendingComponent } from './doctor-dashboard/appointments/pending/pendin
 import { CompletedComponent } from './doctor-dashboard/appointments/completed/completed.component';
 import { ReferralsComponent } from './doctor-dashboard/appointments/referrals/referrals.component';
 import { PatientsComponent } from './doctor-dashboard/patients/patients.component';
+import { DocTimeslotsComponent } from './doctor-dashboard/doc-timeslots/doc-timeslots.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'patients', component: PatientsComponent },
+  { path: 'doc-timeslots', component: DocTimeslotsComponent },
 
   {
     path: 'appointments', component: AppointmentsComponent, children: [
