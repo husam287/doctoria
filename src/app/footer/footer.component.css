@@ -16,7 +16,7 @@ p {
 .animate-border {
   position: relative;
   display: block;
-  width: 115px;
+  width: 150px;
   height: 3px;
   background: #007bff;
 }
@@ -127,7 +127,10 @@ p {
       margin-left: 50px;
     }
 
-    .dk-footer .contact-us.contact-us-last {
+    .ss {
+      margin-left: 80px;
+    }
+    .dk-footer {
       margin-left: -80px;
     }
 
@@ -135,7 +138,7 @@ p {
     font-size: 24px;
     top: -15px;
     position: relative;
-    color: #007bff;
+    color: #C70039;
   }
 
 .dk-footer-box-info {
@@ -263,7 +266,7 @@ p {
 }
 
 .footer-widget a {
-  color:  #9f9f9f;
+  color:  #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
@@ -284,6 +287,7 @@ p {
 }
 
   .dk-footer-form input[type=email] {
+    margin-right: 50px;
     padding: 14px 28px;
     border-radius: 50px;
     background: #2E2E2E;
@@ -303,12 +307,12 @@ p {
   .dk-footer-form button[type=submit] {
     position: absolute;
     top: -6px;
-    right: -2px;
-    padding: 11px 28px 14px 20px;
+    right: -6px;
+    padding: 12px 28px 12px 20px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    border: 1px solid #007bff;
-    background: #007bff;
+    border: .5px solid #C70039;
+    background: #C70039;
     color: #fff;
   }
 
@@ -345,7 +349,6 @@ p {
     font-size: 36px;
     top: -5px;
     position: relative;
-    background-color: #C70039;
   }
 
 .contact-info {
@@ -367,14 +370,14 @@ p {
 
   .copyright span,
   .copyright a {
-    color: #C70039;
+    color: #fff;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
   }
 
     .copyright a:hover {
-      color: #000;
+      color: #C70039;
     }
 
 .copyright-menu ul {
@@ -411,6 +414,6 @@ p {
 
     .back-to-top .btn-dark:hover {
       cursor: pointer;
-      background: #FA6742;
-      border-color: #FA6742;
+      background: #C70039;
+      border-color: #C70039;
     }
