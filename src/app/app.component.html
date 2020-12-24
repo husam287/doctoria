@@ -1,17 +1,14 @@
 
-<main style="min-height: 100vh;">
-  <div style="margin-bottom: 100px;" >
-    <app-nav-bar></app-nav-bar>
-</div>
-  
-  <app-home></app-home>
-
-
-
-  <div class="w-100" style="margin-top: 200px; position: relative; left: 0; bottom: 0px;">
-    <app-footer></app-footer>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <app-sidebaar></app-sidebaar>
+    </div>
+    <div class="col-8">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</main>
+</div>
   
 
 
