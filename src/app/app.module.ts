@@ -12,12 +12,19 @@ import { PatientProfileComponent } from './patient-profile/patient-profile.compo
 import { SidebaarComponent } from './patient-profile/sidebaar/sidebaar.component';
 import { EditBasicComponent } from './edit-basic/edit-basic.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
-
+import { HistoryComponent } from './history/history.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
 const appRoutes: Routes = [
      //{path:'',component:SidebaarComponent},
+    //{path:'patient-profile',component:PatientProfileComponent},
+     
+     { path :'appointments',component:AppointmentsComponent},
+     { path:'history',component:HistoryComponent},
      {path:'edit-basic',component:EditBasicComponent},
      {path:'edit-patient',component:EditPatientComponent},
      {path:'home',component:HomeComponent},
+     
+    
 ];
 @NgModule({
   declarations: [
@@ -31,7 +38,8 @@ const appRoutes: Routes = [
     SidebaarComponent,
     EditBasicComponent,
     EditPatientComponent,
-    
+    HistoryComponent,
+    AppointmentsComponent
     
   ],
   imports: [
