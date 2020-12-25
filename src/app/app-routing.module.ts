@@ -18,6 +18,8 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StatisticsComponent } from './doctor-dashboard/statistics/statistics.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { EditDocBasicComponent } from './doctor-dashboard/edit-doc-basic/edit-doc-basic.component';
+import { EditDocSpecialComponent } from './doctor-dashboard/edit-doc-special/edit-doc-special.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -40,6 +42,9 @@ const routes: Routes = [
       { path: 'statistics', component: StatisticsComponent },
       { path: 'patients', component: PatientsComponent },
       { path: 'doc-timeslots', component: DocTimeslotsComponent },
+      { path: 'edit-doc-basic', component: EditDocBasicComponent },
+      { path: 'edit-doc-special', component: EditDocSpecialComponent },
+
 
       {
         path: 'appointments', component: AppointmentsComponent, children: [
