@@ -43,6 +43,8 @@ import { CardsComponent } from './doctors/cards/cards.component';
 import { FilterComponent } from './doctors/filter/filter.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientCardComponent } from './patient-profile/patient-card/patient-card.component';
+import { EditDocBasicComponent } from './doctor-dashboard/edit-doc-basic/edit-doc-basic.component';
+import { EditDocSpecialComponent } from './doctor-dashboard/edit-doc-special/edit-doc-special.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,9 @@ import { PatientCardComponent } from './patient-profile/patient-card/patient-car
     CardsComponent,
     FilterComponent,
     DoctorsComponent,
-    PatientCardComponent
+    PatientCardComponent,
+    EditDocBasicComponent,
+    EditDocSpecialComponent
   ],
   imports: [
     BrowserModule,

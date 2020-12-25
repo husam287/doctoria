@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -10,7 +10,8 @@ import { User } from '../models/User.model';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-@ViewChild('f1') signupform:NgForm;
+
+  @ViewChild('f1') signupform: NgForm;
   submitted = false;
   constructor(private http: HttpClient) { }
 
@@ -19,6 +20,7 @@ export class SignUpComponent implements OnInit {
   onSubmit(){
     this.submitted=true;
     const user:User=this.signupform.value;
+
     this.http.post('http://localhost:8080/api/users/signup', user).toPromise()
     .then((data) =>{
       console.log('succ:',data);
@@ -27,5 +29,7 @@ export class SignUpComponent implements OnInit {
       console.log('error:',err);
     })
   }
+
+
 
 }
