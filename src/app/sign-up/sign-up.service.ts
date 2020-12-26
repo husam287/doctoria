@@ -106,11 +106,15 @@ export class SignUpService {
 
 
     autoLogOut(expireDate: Date) {
+
         this.logoutTimer = setTimeout(() => {
             if (confirm('Please login again')) {
                 this.logOut();
             }
-        }, expireDate.getTime() - new Date().getTime()); //time to logout automatically
+        },
+            // expireDate.getTime() - new Date().getTime()
+            expireDate.getTime()
+        ); //time to logout automatically
 
     }
 

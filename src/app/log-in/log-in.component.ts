@@ -24,7 +24,7 @@ export class LogInComponent implements OnInit {
   ngOnInit(): void {
 
     this.loginservice.currentUserData.subscribe((data) => {
-      console.log(data)
+      console.log("lol", data)
     })
   }
 
