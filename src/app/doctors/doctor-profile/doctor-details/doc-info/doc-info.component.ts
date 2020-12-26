@@ -13,6 +13,7 @@ import { User } from '../../../../models/User.model';
 export class DocInfoComponent implements OnInit {
 
   doctor:Doctor;
+  age:number;
 
   constructor(private route:Router,private http: HttpClient, private route1: ActivatedRoute) { this.route1.params
   .subscribe(params => console.log(params) );}
@@ -24,7 +25,10 @@ export class DocInfoComponent implements OnInit {
    .then((doctor) =>{
      console.log('succ:',doctor);
       this.doctor = doctor;
-      //this.age=d-doctor.basicInfo.birthday;
+      
+      // age calculation
+      let ageNumber = new Date().getFullYear() - new Date(this.doctor.basicInfo.birthday).getFullYear();
+      this.age=ageNumber;
    })
    .catch(err =>{
      console.log('error:',err);

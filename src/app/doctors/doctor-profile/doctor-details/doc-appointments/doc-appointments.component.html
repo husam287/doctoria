@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide my-5" data-ride="carousel" data-interval="false">
+<div id="carouselExampleIndicators" class="carousel slide my-5" data-ride="carousel" data-interval="false" *ngIf="doctor">
 
   <div class="carousel-inner">
     <div class="carousel-item" [ngClass]="i===0?'active':''" *ngFor="let day of timeslot.days;let i=index">
@@ -19,4 +19,4 @@
   </a>
 </div>
 
-<app-appointments-checkout [doctor]="doctor" [day]="selectedDay" [time]="selectedTime"></app-appointments-checkout>
+<app-appointments-checkout *ngIf="doctor" [doctor]="doctor" [day]="selectedDay" [time]="selectedTime"></app-appointments-checkout>
