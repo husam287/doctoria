@@ -1,6 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { SignUpService } from "../sign-up/sign-up.service"
+
+
 
 interface Post {
   email: string;
@@ -16,9 +19,13 @@ export class LogInComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private loginservice: SignUpService) { }
 
   ngOnInit(): void {
+
+    this.loginservice.currentUserData.subscribe((data) => {
+      console.log(data)
+    })
   }
 
   /*onSubmit(form: NgForm){
@@ -27,12 +34,9 @@ export class LogInComponent implements OnInit {
    onSubmit(){
      this.submitted=true;
      const post: Post=this.loginform.value;
-     this.http.post('http://localhost:8080/api/users/login', post).toPromise()
-     .then((data) =>{
-       console.log('succ:',data);
+     this.loginservice.logIn(post.email,post.password).subscribe((data) => {
+       console.log(data)
      })
-     .catch(err =>{
-       console.log('error:',err);
-     })
+     
    }
 }

@@ -1,33 +1,47 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, Injectable, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 import { User } from '../models/User.model';
+import { SignUpService } from "./sign-up.service"
 
+
+// interface AuthSignupData {
+//   token: string;
+//   userId: string;
+
+// }
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
+
+
+
 export class SignUpComponent implements OnInit {
 
   @ViewChild('f1') signupform: NgForm;
   submitted = false;
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient, private signupservice: SignUpService) { }
+  
   ngOnInit(): void {
   }
-  onSubmit(){
-    this.submitted=true;
-    const user:User=this.signupform.value;
+  
+  
+  
+  onSubmit() {
+    this.submitted = true;
+    const user : User = this.signupform.value;
+    this.signupservice.signUp(user).toPromise().then((data) => {
+      console.log('success', data);
+    }).catch((error) => {
+      console.log('Err', error);
 
-    this.http.post('http://localhost:8080/api/users/signup', user).toPromise()
-    .then((data) =>{
-      console.log('succ:',data);
-    })
-    .catch(err =>{
-      console.log('error:',err);
-    })
+
+
+    });
+    
   }
 
 
