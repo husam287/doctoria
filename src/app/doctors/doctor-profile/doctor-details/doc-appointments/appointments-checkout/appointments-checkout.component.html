@@ -15,7 +15,7 @@
           <!-- Doctor NAme -->
           <div class="col-12 text-center">
             <h5 class="orangeColor">Doctor Name</h5>
-            doctor name
+            {{doctor.basicInfo.name}}
           </div>
 
           <!-- Address -->
@@ -23,7 +23,7 @@
             <br>
             <br>
             <h5 class="orangeColor">Address</h5>
-            13 Elsarayat St. Abbassia,cairo
+            {{doctor.basicInfo.address}}
           </div>
 
           <!-- fees and date -->
@@ -31,13 +31,13 @@
             <br>
             <br>
             <i class="far fa-money-bill-alt fa-2x mr-2 orangeColor"></i>
-            <span class="h5">250 LE</span>
+            <span class="h5">{{doctor.fees}} LE</span>
           </div>
           <div class="col-6 text-center">
             <br>
             <br>
             <i class="far fa-clock fa-2x mr-2 orangeColor"></i>
-            <span class="h5">2020/12/4 | 3:30 PM</span>
+            <span class="h5">{{day}} | {{time}}</span>
           </div>
         </div>
 
