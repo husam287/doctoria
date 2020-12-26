@@ -1,8 +1,8 @@
-<main class="container">
+<main class="container" *ngIf="doctor.basicInfo">
     <div class="row justify-content-center">
         <div class="col-md-4 col-10 mb-4">
 
-            <img class="rounded-circle halfBlueShadow" width="250px" height="250px" src={{doctor.basicInfo.photo}}
+            <img class="rounded-circle halfBlueShadow" width="250px" height="250px" [src]="doctor.basicInfo.photo"
                 alt="doc">
 
         </div>
