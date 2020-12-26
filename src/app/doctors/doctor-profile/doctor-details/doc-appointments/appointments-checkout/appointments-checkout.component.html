@@ -11,13 +11,13 @@
       <div class="modal-body">
         <!-- Info -->
         <div class="row" *ngIf="!wantToPay">
-          
+
           <!-- Doctor NAme -->
           <div class="col-12 text-center">
             <h5 class="orangeColor">Doctor Name</h5>
-            Dr.Julia Robert
+            doctor name
           </div>
-          
+
           <!-- Address -->
           <div class="col-12 text-center">
             <br>
@@ -25,7 +25,7 @@
             <h5 class="orangeColor">Address</h5>
             13 Elsarayat St. Abbassia,cairo
           </div>
-          
+
           <!-- fees and date -->
           <div class="col-6 text-center">
             <br>
@@ -40,9 +40,9 @@
             <span class="h5">2020/12/4 | 3:30 PM</span>
           </div>
         </div>
-        
-        
-        
+
+
+
         <!-- Payment -->
         <div *ngIf="wantToPay" class="row text-center">
           <!-- Cash Pay -->
@@ -71,7 +71,7 @@
               <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
               </form>
           </div>
-            
+
         </div>
       </div>
 
@@ -80,7 +80,7 @@
         <div class="w-100">
           <button *ngIf="!wantToPay" type="button" class="btn btn-lg btn-success mr-3" (click)="wantToPay=true">Pay Fees</button>
           <button type="button" class="btn btn-lg btn-danger" (click)="wantToPay=false" data-dismiss="modal" aria-label="Close">Cancel</button>
-          
+
         </div>
       </div>
     </div>

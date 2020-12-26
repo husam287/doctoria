@@ -1,7 +1,7 @@
 <!-- card1 -->
 
-<div *ngFor="let doctor of [1,2,3,4,5]" class="mb-5">
-    <app-doctor-card (click)="goToProfile('da el id')"></app-doctor-card>
+<div *ngFor="let doctor of doctors" class="mb-5">
+    <app-doctor-card [doctor]="doctor"(click)="goToProfile(doctor.basicInfo._id)"></app-doctor-card>
 </div>
 
 
@@ -10,7 +10,7 @@
 
 
 
-<!-- 
+<!--
 <main class="container">
     <div class="row justify-content-center">
         <div class="col-md-3  col-10 mb-3">
@@ -35,7 +35,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle far fa-calendar-check" data-toggle="dropdown">
                 Book
               </button>
-              
+
               <form class="dropdown-menu">
                   <input class="dropdown-item" type="checkbox" id="book1" name="book-1" value="Today from 3pm to 6pm">
                   <label for="gbook1">Today from 3pm to 6pm</label>
@@ -49,6 +49,3 @@
     </div>
 
 </main> -->
-
-
-

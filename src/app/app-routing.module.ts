@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'doctors', component: DoctorsComponent },
   {
-    path: 'doctor-profile', component: DoctorProfileComponent, children: [
+    path: 'doctors/:id', component: DoctorProfileComponent, children: [
       { path: 'info', component: DocInfoComponent },
       { path: 'choose-appointment', component: DocAppointmentsComponent },
       { path: 'reviews', component: DocReviewsComponent }
