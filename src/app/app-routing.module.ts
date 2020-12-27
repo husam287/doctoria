@@ -25,6 +25,7 @@ import { HistoryComponent } from './patient-profile/history/history.component';
 import { EditBasicComponent } from './patient-profile/edit-basic/edit-basic.component';
 import { EditPatientComponent } from './patient-profile/edit-patient/edit-patient.component';
 import { PatAppointmentsComponent } from './patient-profile/pat-appointments/pat-appointments.component';
+import { PatientCardComponent } from './patient-profile/patient-card/patient-card.component';
 
 
 
@@ -67,7 +68,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'patient-profile', component: PatientProfileComponent, children: [
+    path: 'patient-profile/:id', component: PatientProfileComponent, children: [
+      { path: 'card', component: PatientCardComponent },
       { path: 'appointments', component: PatAppointmentsComponent },
       { path: 'history', component: HistoryComponent },
       { path: 'edit-basic', component: EditBasicComponent },

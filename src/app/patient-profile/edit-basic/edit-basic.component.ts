@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Patient } from 'src/app/models/Patient.model';
 
 @Component({
   selector: 'app-edit-basic',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-basic.component.css']
 })
 export class EditBasicComponent implements OnInit {
-
+  @Input('patient') patient: Patient
   constructor() { }
 
   ngOnInit(): void {
