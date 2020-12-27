@@ -16,11 +16,14 @@
         <li class="nav-item p-2" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['improve-your-body']"><i class="fas fa-child mr-2"></i>Improve You Body</a>
         </li>
-        <li class="nav-item  p-2 " routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['signup']"><i class="fa fa-sign-in mr-2"></i>Sign Up </a>
+        <li class="nav-item  p-2 " routerLinkActive="active" *ngIf="!user">
+          <a class="nav-link" [routerLink]="['signup']" ><i class="fa fa-sign-in mr-2"></i>Sign Up </a>
         </li>
-        <li class="nav-item p-2" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['login']"><i class="fa fa-user mr-2"></i>Log In</a>
+        <li class="nav-item p-2" routerLinkActive="active" *ngIf="!user">
+          <a class="nav-link" [routerLink]="['login']" ><i class="fa fa-user mr-2"></i>Log In</a>
+        </li>
+        <li class="nav-item p-2" routerLinkActive="active" *ngIf="user">
+          <a class="nav-link" (click)="logout()" ><i class="fas fa-sign-out-alt mr-2"></i>Log out</a>
         </li>
       </ul>
     </div>

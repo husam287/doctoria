@@ -85,8 +85,7 @@ export class SignUpService {
             user => {
                 this.currentUserData.next(user);
             });
-        const tempDate = new Date(new Date().getTime() + +user.expireDate);
-
+        const tempDate = new Date(user.expireDate);
         this.autoLogOut(tempDate);
     }
 
@@ -99,6 +98,8 @@ export class SignUpService {
         this.user.next(null);
         clearTimeout(this.logoutTimer); //clear the time if you log out
         this.router.navigate(['/'])
+        this.currentUserData.next(null);
+
     }
 
 
@@ -112,8 +113,9 @@ export class SignUpService {
                 this.logOut();
             }
         },
-            // expireDate.getTime() - new Date().getTime()
-            expireDate.getTime()
+        
+            expireDate.getTime() - new Date().getTime()
+            //expireDate.getTime()
         ); //time to logout automatically
 
     }
@@ -135,7 +137,7 @@ export class SignUpService {
                     const user: AuthSignupData = u;
                     this.user.next(user);
                     localStorage.setItem('userData', JSON.stringify(user));
-                    const tempDate = new Date(new Date().getTime() + +user.expireDate);
+                    const tempDate = new Date(user.expireDate);
                     this.autoLogOut(tempDate); //set the autolog out to logout after expire time
                     this.router.navigate(['']);
 
