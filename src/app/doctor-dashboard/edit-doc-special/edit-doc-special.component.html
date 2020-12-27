@@ -2,10 +2,10 @@
   <div class="text-decoration-none text-center p-3 mb-2 m-3  text-black font-weight-bold ">
     <h2>Edit Doctor Information</h2>
   </div>
-  <form class="row g-3">
+  <form class="row g-3" (ngSubmit)="onSubmit()" #f1="ngForm" >
     <div class="col-md-6">
       <div class="input-group mb-3">
-        <select class="custom-select ">
+        <select class="custom-select " name="area" ngModel>
           <option selected>Area</option>
           <option value="cairo">Cairo</option>
           <option value="giza">Giza</option>
@@ -23,19 +23,19 @@
           <option value="assiut">Assiut</option>
           <option value="sohag">Sohag</option>
         </select>
-        
+
       </div>
     </div>
     <div class="col-md-6 ">
       <div class="input-group ">
-        <label for="inputAddress" class="form-label">Fees</label>
-        <input type="text" class="form-control" id="inputFees" placeholder="">
+
+        <input type="text" class="form-control" id="inputFees" placeholder="Fees" name="fees" ngModel>
       </div>
     </div>
     <div class="col-12">
       <div class="input-group mb-3">
-        <select class="custom-select ">
-          <option selected>Specialization</option>
+        <select class="custom-select " name="speciality" ngModel>
+          <option selected>Speciality</option>
           <option value="Dermatology">Dermatology (Skin)</option>
           <option value="Dentistry">Dentistry (Teeth)</option>
           <option value="Psychiatry">Psychiatry (Mental, Emotional or Behavioral Disorders)</option>
@@ -47,12 +47,12 @@
           <option value="Cardiology">Cardiology and Vascular Disease (Heart)</option>
           <option value="Allergy">Allergy and Immunology (Sensitivity and Immunity)</option>
         </select>
-        
+
       </div>
     </div>
-    
+
     <div class="col-12">
-      <br /><button type="submit" class="btn btn-primary">Confirm</button>
+      <br /><button type="submit" class="btn btn-primary" [disabled]="!f1.valid">Confirm</button>
     </div>
   </form>
 </div>

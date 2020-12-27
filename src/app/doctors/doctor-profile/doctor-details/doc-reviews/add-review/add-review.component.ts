@@ -6,6 +6,7 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
   styleUrls: ['./add-review.component.css']
 })
 export class AddReviewComponent implements OnInit,OnDestroy {
+  rate:number;
   @ViewChild('closeButton') closeButton:ElementRef;
   choosedRate:boolean=false;
 
@@ -30,7 +31,11 @@ export class AddReviewComponent implements OnInit,OnDestroy {
     for (let index = 0; index <= 4; index++) {
       document.getElementById('star'+index).classList.remove("text-warning")
     }
-  
+
+  }
+  giveRate(n){
+    this.choosedRate =! this.choosedRate;
+    this.rate = n;
   }
 
 }

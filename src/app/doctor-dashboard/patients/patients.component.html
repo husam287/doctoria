@@ -7,22 +7,14 @@
     <thead class="text-white" style="background-color:#C70039;">
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Address</th>
+
 
       </tr>
     </thead>
     <tbody>
+      <tr *ngFor='let patient of patients'>
+        <th scope="row">{{patient.basicInfo.name}}</th>
       <tr>
-        <th scope="row">mariam</th>
-        <td>01024051445</td>
-        <td>cairo</td>
-
-      <tr>
-        <th scope="row">mariam</th>
-        <td>01024051445</td>
-        <td>cairo</td>
-      </tr>
     </tbody>
   </table>
 

@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 import { Doctor } from '../../models/Doctor.model';
+import { User } from '../../models/User.model';
+
 @Component({
   selector: 'app-edit-doc-basic',
   templateUrl: './edit-doc-basic.component.html',
@@ -19,8 +21,8 @@ export class EditDocBasicComponent implements OnInit {
 
   onSubmit(){
     this.submitted=true;
-    const post: Doctor=this.editdocform.value;
-    this.http.put('localhost:8080/api/users/update-basic-info', post).toPromise()
+    const post=this.editdocform.value;
+    this.http.put('http://localhost:8080/api/users/update-basic-info', post).toPromise()
     .then((data) =>{
       console.log('succ:',data);
     })

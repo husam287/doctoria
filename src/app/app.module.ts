@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +49,7 @@ import { EditBasicComponent } from './patient-profile/edit-basic/edit-basic.comp
 import { EditPatientComponent } from './patient-profile/edit-patient/edit-patient.component';
 import { HistoryComponent } from './patient-profile/history/history.component';
 import { PatAppointmentsComponent } from './patient-profile/pat-appointments/pat-appointments.component';
+import { AuthInterceptorService } from 'src/app/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,9 @@ import { PatAppointmentsComponent } from './patient-profile/pat-appointments/pat
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 
 })

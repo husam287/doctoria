@@ -113,7 +113,7 @@ export class SignUpService {
                 this.logOut();
             }
         },
-        
+
             expireDate.getTime() - new Date().getTime()
             //expireDate.getTime()
         ); //time to logout automatically
@@ -152,7 +152,7 @@ export class SignUpService {
     }
 
 
-    //########## Error handel function ########## 
+    //########## Error handel function ##########
 
 
     private handelErrors(error: HttpErrorResponse) {

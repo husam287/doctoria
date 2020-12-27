@@ -4,7 +4,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item p-2" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active">
@@ -22,9 +22,15 @@
         <li class="nav-item p-2" routerLinkActive="active" *ngIf="!user">
           <a class="nav-link" [routerLink]="['login']" ><i class="fa fa-user mr-2"></i>Log In</a>
         </li>
+        <li class="nav-item p-2" routerLinkActive="active" *ngIf ="user">
+          <a  class="nav-link"  [routerLink]="['doc-dashboard']" *ngIf="user.userType === 'Doctor' " ><i class="fas fa-sign-out-alt mr-2"></i>Dashboard</a>
+        </li>
         <li class="nav-item p-2" routerLinkActive="active" *ngIf="user">
           <a class="nav-link" (click)="logout()" ><i class="fas fa-sign-out-alt mr-2"></i>Log out</a>
         </li>
+
+
+
       </ul>
     </div>
   </nav>
