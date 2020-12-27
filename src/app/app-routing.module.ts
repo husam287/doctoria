@@ -20,6 +20,13 @@ import { StatisticsComponent } from './doctor-dashboard/statistics/statistics.co
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { EditDocBasicComponent } from './doctor-dashboard/edit-doc-basic/edit-doc-basic.component';
 import { EditDocSpecialComponent } from './doctor-dashboard/edit-doc-special/edit-doc-special.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { HistoryComponent } from './patient-profile/history/history.component';
+import { EditBasicComponent } from './patient-profile/edit-basic/edit-basic.component';
+import { EditPatientComponent } from './patient-profile/edit-patient/edit-patient.component';
+import { PatAppointmentsComponent } from './patient-profile/pat-appointments/pat-appointments.component';
+
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -45,7 +52,6 @@ const routes: Routes = [
       { path: 'edit-doc-basic', component: EditDocBasicComponent },
       { path: 'edit-doc-special', component: EditDocSpecialComponent },
 
-
       {
         path: 'appointments', component: AppointmentsComponent, children: [
           { path: 'all', component: AllComponent },
@@ -56,6 +62,17 @@ const routes: Routes = [
       }
 
 
+
+    ]
+  },
+
+  {
+    path: 'patient-profile', component: PatientProfileComponent, children: [
+      { path: 'appointments', component: PatAppointmentsComponent },
+      { path: 'history', component: HistoryComponent },
+      { path: 'edit-basic', component: EditBasicComponent },
+      { path: 'edit-patient', component: EditPatientComponent },
+      { path: 'home', component: HomeComponent }
 
     ]
   }

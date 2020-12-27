@@ -37,14 +37,18 @@ import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { PatientProfileComponent } from './patient-profile/patient-profile.component';
-
 import { CardsComponent } from './doctors/cards/cards.component';
 import { FilterComponent } from './doctors/filter/filter.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientCardComponent } from './patient-profile/patient-card/patient-card.component';
 import { EditDocBasicComponent } from './doctor-dashboard/edit-doc-basic/edit-doc-basic.component';
 import { EditDocSpecialComponent } from './doctor-dashboard/edit-doc-special/edit-doc-special.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { SidebaarComponent } from './patient-profile/sidebaar/sidebaar.component';
+import { EditBasicComponent } from './patient-profile/edit-basic/edit-basic.component';
+import { EditPatientComponent } from './patient-profile/edit-patient/edit-patient.component';
+import { HistoryComponent } from './patient-profile/history/history.component';
+import { PatAppointmentsComponent } from './patient-profile/pat-appointments/pat-appointments.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +91,13 @@ import { EditDocSpecialComponent } from './doctor-dashboard/edit-doc-special/edi
     DoctorsComponent,
     PatientCardComponent,
     EditDocBasicComponent,
+    PatientProfileComponent,
+		SidebaarComponent,
+		EditBasicComponent,
+		EditPatientComponent,
+    HistoryComponent,
+    AppointmentsComponent,
+    PatAppointmentsComponent,
     EditDocSpecialComponent
   ],
   imports: [
@@ -97,5 +108,6 @@ import { EditDocSpecialComponent } from './doctor-dashboard/edit-doc-special/edi
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

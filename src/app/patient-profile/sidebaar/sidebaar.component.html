@@ -1,0 +1,35 @@
+<div class="d-flex" id="wrapper">
+   <!-- Sidebar -->
+   <div class="normalBlueBg text-white border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"> </div>
+      <div class="text-white list-group list-group-flush">
+         <a [routerLink]="['home']" routerLinkActive="router-link-active"
+            class="text-white list-group-item list-group-item-action blueBg">Home</a>
+
+         <a [routerLink]="['appointments']" routerLinkActive="router-link-active"
+            class="text-white list-group-item list-group-item-action blueBg">Appointments</a>
+
+         <a [routerLink]="['edit-basic']" routerLinkActive="router-link-active"
+            class="text-white list-group-item list-group-item-action blueBg">Edit Basic
+            Info</a>
+
+         <a [routerLink]="['edit-patient']" routerLinkActive="router-link-active"
+            class="text-white list-group-item list-group-item-action blueBg">Edit Patient
+            Info</a>
+
+         <a [routerLink]="['history']" routerLinkActive="router-link-active"
+            class="text-white list-group-item list-group-item-action blueBg">History</a>
+      </div>
+   </div>
+   <!-- /#sidebar-wrapper -->
+   <!-- Page Content -->
+   <div id="page-content-wrapper">
+
+
+      <div class="container-fluid">
+         <router-outlet></router-outlet>
+      </div>
+   </div>
+
+   <!-- /#page-content-wrapper -->
+</div>
