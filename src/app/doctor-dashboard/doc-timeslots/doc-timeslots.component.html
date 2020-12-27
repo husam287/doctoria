@@ -1,29 +1,31 @@
 <h2 class="m-4 font-weight-bold">Choose Your Time Slots Here</h2>
 
-<form class="m-4">
-    <div>
-        <h5 class="normalPinkBg text-white text-sm-left font-weight-bold p-3 rounded">
+<form class="m-4" (ngSubmit)="onSubmit()" #f1="ngForm">
+    <div class="normalPinkBg text-white text-sm-left font-weight-bold p-3 rounded">
+        <h5 >
             Working Days
         </h5>
-        <div class="form-check form-check-inline p-3" *ngFor="let day of weekdays">
-            <input class="form-check-input" type="checkbox" id="{{day}}" value="{{day}}">
-            <label class="form-check-label" for="Day{{weekdays.indexOf(day) + 1}}">{{day}}</label>
+        <div class="form-check form-check-inline p-3 container-fluid" >
+          <select class = "form-control" id="days" name="days" ngModel >
+          <option *ngFor='let day of weekdays'>{{day}}</option>
+           </select>
         </div>
-
     </div>
 
-    <div>
+ <div><br> <br></div>
+    <div class="normalPinkBg text-white text-sm-left font-weight-bold p-3 rounded">
         <h5 class="normalPinkBg text-white text-sm-left font-weight-bold p-3 rounded">
             Slots in a Day
         </h5>
-        <div class="form-check form-check-inline p-3" *ngFor="let slot of slots">
-            <input class="form-check-input" type="checkbox" id="{{slot}}" value="{{slot}}">
-            <label class="form-check-label" for="Slot{{slots.indexOf(slot) + 1}}">{{slot}}</label>
+        <div class="form-check form-check-inline p-3 container-fluid" >
+          <select class = "form-control" id="days" name="slots" ngModel>
+          <option *ngFor='let slot of slots'>{{slot}}</option>
+           </select>
         </div>
-
     </div>
+    <div><br> <br></div>
 
     <div class="mx-auto" style="width: 200px;">
-        <button type="submit" class="btn btn-primary">Confirm Slots</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!f1.valid">Confirm Slots</button>
     </div>
 </form>
