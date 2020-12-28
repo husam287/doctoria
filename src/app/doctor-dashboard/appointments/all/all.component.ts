@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Appointment } from 'src/app/models/Appointment.model';
 import { Doctor } from 'src/app/models/Doctor.model';
@@ -13,13 +13,32 @@ export class AllComponent implements OnInit {
 
   appointments:Appointment[];
   doctors:Doctor[];
+
+  @Input('filter') filter:string='All';
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
 
     this.http.get<Appointment[]>('http://localhost:8080/api/doctors/my-profile/my-appointments').toPromise()
     .then(appointments=>{
-      this.appointments=appointments;
+      this.appointments=appointments.filter(value=>{
+        
+        switch (this.filter) {
+          case 'All':
+            return value;
+
+          case 'Pending':
+            return !value.completed;
+
+          case 'Completed':
+            return value.completed;
+
+          case 'Referred':
+            return value.referred;
+        
+        }
+        
+      });
     })
 
     this.http.get<Doctor[]>('http://localhost:8080/api/doctors/all').toPromise()
