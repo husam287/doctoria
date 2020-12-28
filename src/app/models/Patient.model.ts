@@ -5,7 +5,7 @@ import { Appointment } from './Appointment.model';
 export interface Patient {
 _id?: string;
 basicInfo?: User;
-chronicDiseases?: [String];
+chronicDiseases?: string[];
 history?: [{doctor:Doctor,date:Date}];
 appointments?: [{details:Appointment, doctor:Doctor}];
 }

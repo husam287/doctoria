@@ -22,7 +22,7 @@ export class EditDocBasicComponent implements OnInit,OnDestroy {
 
   ngOnInit(): void {
     this.subs=this.authService.currentUserData.subscribe(user=>{
-      this.user=user;
+      this.user=user; 
     })
   }
   ngOnDestroy(){

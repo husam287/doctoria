@@ -3,15 +3,16 @@
      <h2>Edit Patient Information</h2>
 
   </div>
-  <form class="row g-3">
+  <form #form="ngForm" (submit)="onSubmit(form)" class="row g-3">
     
       
     <div class="col-12">
       <br /> <label for="inputEmail4" class="form-label mr-3">Chronic Disease:  </label>
-      <input type="text" id="myText" value={{patient.chronicDiseases}}>
+      <textarea class="form-control" type="text" cols="5" rows="4" id="myText" [ngModel]="chronic" name="chronicDiseases"></textarea>
     </div>
     <div class="col-12">
       <br /><button type="submit" class="btn btn-primary">Confirm</button>
     </div>
+    
   </form>
 </div>
