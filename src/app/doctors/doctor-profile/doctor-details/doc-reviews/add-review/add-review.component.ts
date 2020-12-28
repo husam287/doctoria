@@ -1,4 +1,9 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute} from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-add-review',
@@ -6,11 +11,18 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
   styleUrls: ['./add-review.component.css']
 })
 export class AddReviewComponent implements OnInit,OnDestroy {
+
+  @ViewChild('f1') reviewform:NgForm;
+  submitted = false;
   rate:number;
+
+
+
   @ViewChild('closeButton') closeButton:ElementRef;
   choosedRate:boolean=false;
 
-  constructor() { }
+  constructor(private route:Router,private http: HttpClient, private route1: ActivatedRoute) { this.route1.params
+  .subscribe(params => console.log(params) );}
 
   ngOnInit(): void {
   }
@@ -37,5 +49,21 @@ export class AddReviewComponent implements OnInit,OnDestroy {
     this.choosedRate =! this.choosedRate;
     this.rate = n;
   }
+
+  onSubmit(){
+    const id = this.route1.parent.snapshot.params['id'];
+    this.submitted=true;
+    const post=this.reviewform.value.comment;
+    const review={comment: post, rate:this.rate}
+    this.http.post('http://localhost:8080/api/patients/make-review/'+id, review).toPromise()
+    .then((data) =>{
+      console.log('succ:',data);
+    })
+    .catch(err =>{
+      console.log('error:',err);
+    })
+  }
+
+
 
 }

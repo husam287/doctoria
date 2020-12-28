@@ -9,5 +9,5 @@ export interface User {
   address?: string;
   photo?: string;
   userType: string;
-  userDetails?:string;
+  userDetails?:any;
 }

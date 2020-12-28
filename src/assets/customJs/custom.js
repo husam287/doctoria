@@ -1,4 +1,4 @@
-function openNav() {
+/*function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "150px";
 }
@@ -24,4 +24,4 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-}
+}*/
