@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { User } from '../models/User.model';
 import { SignUpService } from "./sign-up.service"
+import { Router } from '@angular/router';
 
 
 // interface AuthSignupData {
@@ -23,25 +24,29 @@ export class SignUpComponent implements OnInit {
 
   @ViewChild('f1') signupform: NgForm;
   submitted = false;
-  constructor(private http: HttpClient, private signupservice: SignUpService) { }
-  
+  constructor(private route: Router, private http: HttpClient, private signupservice: SignUpService) { }
+
   ngOnInit(): void {
   }
-  
-  
-  
+
+
+
   onSubmit() {
     this.submitted = true;
-    const user : User = this.signupform.value;
+    const user: User = this.signupform.value;
     this.signupservice.signUp(user).toPromise().then((data) => {
       console.log('success', data);
+      alert("Account Created Successfully..!")
+      this.route.navigate(['login']);
+      
+      
+      
     }).catch((error) => {
       console.log('Err', error);
-
-
-
+      console.log(error.error.errorData[0].msg);
+      alert(error.error.errorData[0].msg);
     });
-    
+
   }
 
 

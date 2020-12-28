@@ -1,57 +1,59 @@
+<div class="text-decoration-none text-center p-3 mb-2  text-black m-4 font-weight-bold">
+	<h2>Showing History</h2>
+</div>
+<div class="row m-3">
 
-  <div class="text-decoration-none text-center p-3 mb-2  text-black m-4 font-weight-bold">
-    <h2>Showing History</h2>
-  </div>
-  <div class="row m-3">
+	<table class="table   table-hover mx-auto">
 
-    <table class="table   table-hover mx-auto">
+		<thead class="text-white" style="background-color: #C70039;">
 
-      <thead class="text-white" style="background-color: #C70039;">
+			<tr>
 
-        <tr>
+				<th scope="col">Doctor</th>
 
-          <th scope="col">Doctor</th>
+				<th scope="col">Speciality</th>
 
-          <th scope="col">Speciality</th>
+				<th scope="col">Date</th>
 
-          <th scope="col">Date</th>
+				<th>Fees</th>
 
-          <th>Fees</th>
+			</tr>
 
-        </tr>
+		</thead>
 
-      </thead>
-
-      <tbody>
-
-        <tr>
-
-          <th scope="row">Dr.Ahmed</th>
-
-          <td>Dentist</td>
-
-          <td>11/7/2017</td>
-
-          <td>250</td>
-
-        </tr>
-
-        <tr>
-
-          <th scope="row">Dr.Ali</th>
-
-          <td>....</td>
-
-          <td>.....</td>
-
-          <td>....</td>
-
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
+		<tbody>
 
 
+			<tr>
+
+				<th scope="row">Dr.Ahmed</th>
+
+				<td>Dentist</td>
+
+				<td>11/7/2017</td>
+
+				<td>250</td>
+
+			</tr>
+
+			<tr>
+				
+				<!-- Doctor name -->
+				<th scope="row">{{ history[0].doctor.basicInfo.name }}</th>
+
+				<!-- Doctor Speciality -->
+				<td> {{ history[0].doctor.speciality }} </td>
+
+				<!-- Date -->
+				<td>{{ history[0].date }}</td>
+
+				<!-- Fees -->
+				<td> {{ history[0].doctor.fees }} </td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+
+</div>

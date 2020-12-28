@@ -40,6 +40,11 @@ export class EditDocBasicComponent implements OnInit,OnDestroy {
       this.user.birthday=post.birthday;
       this.user.phone=post.phone;
       this.authService.currentUserData.next(this.user);
+
+      alert("Data Modified Successfully")
+
+
+
     })
     .catch(err =>{
       console.log('error:',err);

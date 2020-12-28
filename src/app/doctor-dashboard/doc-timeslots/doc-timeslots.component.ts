@@ -80,6 +80,8 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
       this.realTimeSlot.slots=timeslot.slots;
       this.user.userDetails.timeslot=this.realTimeSlot;
       this.authService.currentUserData.next(this.user);
+
+      alert("Timeslots Modified Successfully..!!")
       
     })
     .catch(err=>{
