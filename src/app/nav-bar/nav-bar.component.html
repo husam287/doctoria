@@ -25,6 +25,9 @@
         <li class="nav-item p-2" routerLinkActive="active" *ngIf ="user">
           <a  class="nav-link"  [routerLink]="['doc-dashboard']" *ngIf="user.userType === 'Doctor' " ><i class="fas fa-sign-out-alt mr-2"></i>Dashboard</a>
         </li>
+        <li class="nav-item p-2" routerLinkActive="active" *ngIf ="user">
+          <a  class="nav-link"  [routerLink]="['patient-profile']" *ngIf="user.userType === 'Patient' " ><i class="fas fa-sign-out-alt mr-2"></i>My Profile</a>
+        </li>
         <li class="nav-item p-2" routerLinkActive="active" *ngIf="user">
           <a class="nav-link" (click)="logout()" ><i class="fas fa-sign-out-alt mr-2"></i>Log out</a>
         </li>

@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Timeslot } from 'src/app/models/Timeslot.model';
 import { SignUpService } from 'src/app/sign-up/sign-up.service';
+=======
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute} from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+
+>>>>>>> f186bc3e45f2b135d0db00a7ff2f41e9cb701eee
 
 @Component({
   selector: 'app-doc-timeslots',
   templateUrl: './doc-timeslots.component.html',
   styleUrls: ['./doc-timeslots.component.css']
 })
+<<<<<<< HEAD
 export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
   weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   slots = [];
@@ -25,6 +35,15 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
       else this.slots.push(`${i}:00`);
     }
   }
+=======
+export class DocTimeslotsComponent implements OnInit {
+  weekdays = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  slots = ['09:00','10:00','11:00','12:00','01:00','02:00','03:00','04:00','05:00'];
+  @ViewChild('f1') timeslotform:NgForm;
+  submitted = false;
+
+  constructor(private http: HttpClient) { }
+>>>>>>> f186bc3e45f2b135d0db00a7ff2f41e9cb701eee
 
   ngOnInit(): void {
     this.subs=this.authService.currentUserData.subscribe(user=>{
@@ -32,6 +51,7 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
     })
   }
 
+<<<<<<< HEAD
   ngAfterViewInit(){
     this.realTimeSlot.days.forEach(element=>{
       document.getElementById(element).click();
@@ -79,4 +99,19 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
   }
 
 
+=======
+  onSubmit(){
+
+    this.submitted=true;
+    const post=this.timeslotform.value;
+    console.log(post);
+    //this.http.post<>('http://localhost:8080/api/doctors/edit-timeslot',post ).toPromise()
+    //.then((data) =>{
+    //  console.log('succ:',data);
+    //})
+    //.catch(err =>{
+    //  console.log('error:',err);
+  //  })
+  }
+>>>>>>> f186bc3e45f2b135d0db00a7ff2f41e9cb701eee
 }

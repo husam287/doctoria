@@ -17,11 +17,10 @@ export class PatientCardComponent implements OnInit {
 		this.route1.params
 			.subscribe(params => console.log("params: ", params));
 
-
 	}
 
 	ngOnInit(): void {
-		
+
 		const id = this.route1.snapshot.parent.params['id'];
 		console.log("id is: ", id);
 		this.http.get<Patient>('http://localhost:8080/api/patients/' + id).toPromise()
@@ -34,7 +33,7 @@ export class PatientCardComponent implements OnInit {
 
 			})
 
-		
+
 
 	}
 

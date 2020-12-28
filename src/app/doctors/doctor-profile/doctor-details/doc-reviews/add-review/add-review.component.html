@@ -9,13 +9,13 @@
             </div>
 
             <div class="modal-body">
-                <form >
+                <form (ngSubmit)="onSubmit()" #f1="ngForm" >
                     <i *ngFor="let review of [0,1,2,3,4]" [id]="'star'+review" (click)="giveRate(review+1)" (mouseleave)="removeRate()" (mouseenter)="changeRate(review)"
                     class="fas fa-star fa-2x"></i>
                     <div class="form-group mt-3">
-                        <textarea placeholder="Write Your Comment Here" class="form-control text-center" name="comment" rows="2"></textarea>
+                        <textarea placeholder="Write Your Comment Here" class="form-control text-center" name="comment" rows="2" ngModel></textarea>
                     </div>
-                    <button type="button" class="btn btn-outline-warning rounded-pill">Submit</button>
+                    <button type="submit" class="btn btn-outline-warning rounded-pill" [disabled]="!f1.valid">Submit</button>
                 </form>
             </div>
         </div>

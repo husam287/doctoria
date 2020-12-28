@@ -1,13 +1,19 @@
 <h2 class="m-4 font-weight-bold">Choose Your Time Slots Here</h2>
 
-<form class="m-4">
+<form class="m-4" (ngSubmit)="onSubmit()" #f1="ngForm">
     <div>
         <h5 class="normalPinkBg text-white text-sm-left font-weight-bold p-3 rounded">
             Working Days
         </h5>
+<<<<<<< HEAD
         <div class="form-check form-check-inline p-3" *ngFor="let day of weekdays;let i = index">
             <input class="form-check-input" type="checkbox" [id]="day" (change)="checkWeeks(day)" [value]="day">
             <label class="form-check-label" [for]="day" >{{day}}</label>
+=======
+        <div class="form-check form-check-inline p-3" *ngFor="let day of weekdays">
+            <input class="form-check-input" type="checkbox" id="{{day}}" value="{{day}}" ngModel>
+            <label class="form-check-label" for="Day{{weekdays.indexOf(day) + 1}}">{{day}}</label>
+>>>>>>> f186bc3e45f2b135d0db00a7ff2f41e9cb701eee
         </div>
 
     </div>
@@ -16,14 +22,24 @@
         <h5 class="normalPinkBg text-white text-sm-left font-weight-bold p-3 rounded">
             Slots in a Day
         </h5>
+<<<<<<< HEAD
         <div class="form-check form-check-inline p-3" *ngFor="let slot of slots;let i=index">
             <input class="form-check-input" type="checkbox" [id]="slot" (change)="checkSlots(slot)" [value]="slot">
             <label class="form-check-label" [for]="slot">{{slot}}</label>
+=======
+        <div class="form-check form-check-inline p-3" *ngFor="let slot of slots">
+            <input class="form-check-input" type="checkbox" id="{{slot}}" value="{{slot}}" ngModel>
+            <label class="form-check-label" for="Slot{{slots.indexOf(slot) + 1}}">{{slot}}</label>
+>>>>>>> f186bc3e45f2b135d0db00a7ff2f41e9cb701eee
         </div>
 
     </div>
 
     <div class="mx-auto" style="width: 200px;">
+<<<<<<< HEAD
         <button type="button" (click)="onSubmit()" class="btn btn-primary">Confirm Slots</button>
+=======
+        <button type="submit" class="btn btn-primary" [disabled]="!f1.valid">Confirm Slots</button>
+>>>>>>> f186bc3e45f2b135d0db00a7ff2f41e9cb701eee
     </div>
 </form>
