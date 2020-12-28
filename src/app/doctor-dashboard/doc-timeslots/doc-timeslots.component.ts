@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Timeslot } from 'src/app/models/Timeslot.model';
+import { User } from 'src/app/models/User.model';
 import { SignUpService } from 'src/app/sign-up/sign-up.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
   slots = [];
 
   realTimeSlot:Timeslot
+  user:User;
 
   selectedWeekdays = [];
   selectedSlots = [];
@@ -28,7 +30,8 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
 
   ngOnInit(): void {
     this.subs=this.authService.currentUserData.subscribe(user=>{
-      this.realTimeSlot=user.userDetails.timeslot;
+      this.user=user;
+      this.realTimeSlot=this.user.userDetails.timeslot;
     })
   }
 
@@ -69,12 +72,18 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
 
 
   onSubmit(){
-    const timeslot={days:this.selectedWeekdays,slots:this.selectedSlots};
+    const timeslot:Timeslot={days:this.selectedWeekdays,slots:this.selectedSlots};
     console.log(timeslot)
-    this.http.put("http://localhost:8080/api/doctors/my-profile/edit-timeslot",timeslot).toPromise()
+    this.http.put('http://localhost:8080/api/doctors/edit-timeslot',timeslot).toPromise()
     .then(result=>{
       this.realTimeSlot.days=timeslot.days;
       this.realTimeSlot.slots=timeslot.slots;
+      this.user.userDetails.timeslot=this.realTimeSlot;
+      this.authService.currentUserData.next(this.user);
+      
+    })
+    .catch(err=>{
+      console.log(err);
     })
   }
 
