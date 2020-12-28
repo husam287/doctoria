@@ -39,10 +39,11 @@ export class AllComponent implements OnInit {
   }
 
   onSubmit(form:NgForm,_appId:string,index:number){
-    this.http.post(`http://localhost:8080/api/doctors/refer-patient?doctor=${form.value.doctorId}&appointment=${_appId}`,null)
+    this.http.post<{'message':string}>(`http://localhost:8080/api/doctors/refer-patient?doctor=${form.value.doctorId}&appointment=${_appId}`,null)
     .toPromise()
     .then(result=>{
       this.appointments.splice(index,1);
+      alert(result.message);
     })
   }
 
