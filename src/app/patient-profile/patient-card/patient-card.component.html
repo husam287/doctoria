@@ -1,19 +1,23 @@
-<main class="container">
-    <div class="row justify-content-center border">
+<main class="m-3">
+    <div class="row justify-content-center">
         
         <div class="col-md-8 col-10 border-secondary rounded p-3 blueShadow ">
-            <h3 class="mr-3 text-center blueShadow p-2 mb-4">Ahmed Muhamed</h3>
+            <h3 class="mr-3 text-center blueShadow p-2 mb-4"> {{patient.basicInfo.name}} </h3>
             <i class="fas fa-venus-mars fa-2x mr-2 pinkColor"></i>
-            <span class="h5">Gender: Male</span>
+            <span class="h5">Gender: {{patient.basicInfo.gender}} </span>
             <hr>
             <i class="fa fa-phone fa-2x mr-2 pinkColor"></i>
-            <span class="h5">Phone number: 01005494654</span>
+            <span class="h5">Phone number: {{patient.basicInfo.phone}} </span>
             <hr>
-            <i class="fas fa-envelope-open-text fa-2x mr-2 pinkColor"></i>
-            <span class="h5">Email: Ahmed@gmail.com</span>
+            <i class="fas fa-address-card fa-2x mr-2 pinkColor"></i>
+            <span class="h5">Address: {{ patient.basicInfo.birthday }} </span>
             <hr>
             <i class="fas fa-user-alt fa-2x mr-2 pinkColor"></i>
-            <span class="h5">Birthday date: 11/12</span>
+            <span class="h5">Date of Birth: {{ patient.basicInfo.birthday }} </span>
+            <hr>
+            <i class="fas fa-envelope-open-text fa-2x mr-2 pinkColor"></i>
+            <span class="h5">ChronicDiseases: {{patient.chronicDiseases.toString()}} </span>
+            <hr>
 
         </div>
     </div>

@@ -11,51 +11,60 @@
       <div class="modal-body">
         <!-- Info -->
         <div class="row" *ngIf="!wantToPay">
-          
+
           <!-- Doctor NAme -->
           <div class="col-12 text-center">
             <h5 class="orangeColor">Doctor Name</h5>
-            Dr.Julia Robert
+            {{doctor.basicInfo.name}}
           </div>
-          
+
           <!-- Address -->
           <div class="col-12 text-center">
             <br>
             <br>
             <h5 class="orangeColor">Address</h5>
-            13 Elsarayat St. Abbassia,cairo
+            {{doctor.basicInfo.address}}
           </div>
-          
+
           <!-- fees and date -->
           <div class="col-6 text-center">
             <br>
             <br>
             <i class="far fa-money-bill-alt fa-2x mr-2 orangeColor"></i>
-            <span class="h5">250 LE</span>
+            <span class="h5">{{doctor.fees}} LE</span>
           </div>
           <div class="col-6 text-center">
             <br>
             <br>
             <i class="far fa-clock fa-2x mr-2 orangeColor"></i>
-            <span class="h5">2020/12/4 | 3:30 PM</span>
+            <span class="h5">{{day}} | {{time}}</span>
           </div>
         </div>
-        
-        
-        
+
+
+
         <!-- Payment -->
-        <div *ngIf="wantToPay" class="row text-center">
+        <div *ngIf="wantToPay" class="row text-center justify-content-center">
           <!-- Cash Pay -->
-          <div class="col-6">
+          <div class="col-2">
             <button class="btn-warning rounded-pill font-weight-bold py-0 mb-1" (click)="payWithCash()">Pay with Cash</button>
             <div>
               <i class="fas fa-handshake text-dark mr-1"></i>
               <i class="fas fa-wallet text-dark"></i>
             </div>
           </div>
+          <div *ngIf="wantToPay" class="row text-center">
+            <!-- Cash Pay -->
+            <div class="col-8">
+              <button class="btn-danger rounded-pill font-weight-bold py-0 mb-1" (click)="payWithCash()">Emergency Reservation</button>
+              <div>
+                <i class="fas fa-ambulance text-dark mr-1"></i>
+                <i class="fas fa-wallet text-dark"></i>
+              </div>
+            </div>
 
           <!-- Paypal online Pay -->
-          <div class="col-6">
+          <div class="col-2">
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_xclick">
               <input type="hidden" name="business" value="husam287@hotmail.com">
@@ -71,7 +80,7 @@
               <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
               </form>
           </div>
-            
+
         </div>
       </div>
 
@@ -80,7 +89,7 @@
         <div class="w-100">
           <button *ngIf="!wantToPay" type="button" class="btn btn-lg btn-success mr-3" (click)="wantToPay=true">Pay Fees</button>
           <button type="button" class="btn btn-lg btn-danger" (click)="wantToPay=false" data-dismiss="modal" aria-label="Close">Cancel</button>
-          
+
         </div>
       </div>
     </div>

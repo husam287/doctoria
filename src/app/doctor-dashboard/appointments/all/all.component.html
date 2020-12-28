@@ -1,0 +1,46 @@
+<table class="table table-hover">
+  <thead style="background-color:#C70039;">
+    <tr>
+      <th scope="col" style="color: white">Patient</th>
+      <th scope="col" style="color: white">Date</th>
+      <th scope="col" style="color: white">Completed</th>
+      <th scope="col" style="color: white">Referred</th>
+      <th scope="col" style="color: white">Transfer Patient</th>
+
+    </tr>
+  </thead>
+  <tbody *ngIf="appointments">
+    <tr *ngIf="appointments.length===0">
+      <th>No Appointment At The Moment</th>
+    </tr>
+    <tr style="cursor: pointer;"  *ngFor="let app of appointments;let i =index">
+      <th (click)="goToPatient(app.patient.basicInfo._id)" scope="row">{{app.patient.basicInfo.name}}</th>
+      <td (click)="goToPatient(app.patient.basicInfo._id)" >{{app.date}}</td>
+      <td>
+        <button (click)="markCompleted(app.completed,app._id,i)" [ngClass]="app.completed? 'btn-success':'btn-danger'" class="btn">
+          {{app.completed? 'Completed':'Mark as Completed'}}
+        </button>
+      </td>
+      <td (click)="goToPatient(app.patient.basicInfo._id)" >
+        {{app.referred? 'Yes':'No'}}
+      </td>
+      <td>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form,app._id,i)">
+          <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+              <select ngModel="1" #value="ngModel" name="doctorId" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <option value="1" hidden>Choose Doctor</option>
+                <option [value]="doctor.basicInfo._id" *ngFor="let doctor of doctors">{{doctor.basicInfo.name}}</option>
+    
+              </select>
+            </div>
+
+            <div class="col-auto my-1">
+              <button type="submit" [disabled]="value.value==1" class="btn btn-success">Tranfer</button>
+            </div>
+          </div>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>

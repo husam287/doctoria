@@ -1,0 +1,48 @@
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="normalBlueBg text-white border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Welcome {{doctor? doctor.name:'User'}} :) </div>
+        <div class="text-white list-group list-group-flush">
+            <a [routerLink]="['statistics']" routerLinkActive="active"
+                class="text-white list-group-item list-group-item-action blueBg">Statistics</a>
+
+            <a [routerLink]="['patients']" routerLinkActive="active"
+                class="text-white list-group-item list-group-item-action blueBg">Patients</a>
+
+            <a [routerLink]="['appointments/all']" routerLinkActive="active"
+                class="text-white list-group-item list-group-item-action blueBg">Appointments</a>
+
+            <a [routerLink]="['doc-timeslots']" routerLinkActive="active"
+                class="text-white list-group-item list-group-item-action blueBg">Time Slots</a>
+
+            <a [routerLink]="['edit-doc-basic']" routerLinkActive="active"
+                class="text-white list-group-item list-group-item-action blueBg">Edit Basic Info</a>
+
+            <a [routerLink]="['edit-doc-special']" routerLinkActive="active"
+                class="text-white list-group-item list-group-item-action blueBg">Edit Doctor Info</a>
+
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>

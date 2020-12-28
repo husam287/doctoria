@@ -19,6 +19,7 @@ darker blue (button hoover): #0376b6 */
 }
 .pinkBg:hover{
     background-color:#e90043;
+    /* ae0032 */
 }
 
 .blueColor{
@@ -29,6 +30,7 @@ darker blue (button hoover): #0376b6 */
     background-color: #038cd8;
 
 }
+
 
 .blueShadow{
     box-shadow: 0px 0px 5px 0px #038cd8;

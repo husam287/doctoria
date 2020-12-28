@@ -1,89 +1,106 @@
 <!--form for sign up and patient profile -->
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="image.ico" rel="icon" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="image.ico" rel="icon">
     <link href="sign-up.component.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <title>Sign up</title>
- <!--or  <title>Profile</title> -->
-  </head>
+    <!--or  <title>Profile</title> -->
+</head>
 
 
-  <body >
+<body>
 
-<div><br><br> </div>
 
- <!--form parts -->
-  <div class="container outtermain" >
-  <form (ngSubmit)="onSubmit()" #f1="ngForm" >
-<!--name -->
-    <div class="form-group">
-        <label >Name :</label>
-        <input class = "form-control form-control-sm" type="text" id="name" name="name" placeholder="First name and Last name" ngModel required>
+    <h1 class="text-center m-3">Sign up</h1>
+
+
+    <!--form parts -->
+    <div class="container outtermain">
+        <form (ngSubmit)="onSubmit()" #f1="ngForm">
+            <!--name -->
+            <div class="form-group">
+                <label>Name : </label>
+                <input class="form-control form-control-sm" type="text" id="name" name="name"
+                    placeholder="First name and Last name" ngModel required>
+            </div>
+            <!--email -->
+            <div class="form-group">
+                <label>E-mail :</label>
+                <input class="form-control form-control-sm" type="text" id="email" name="email"
+                    placeholder="example@domain.com" ngModel required email #email="ngModel">
+                <span style="color:red;" class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
+                    email</span>
+            </div>
+            <!--Password -->
+            <div class="form-group">
+                <label>Password :</label>
+                <input class="form-control form-control-sm" maxlength="11" type="password" id="password" name="password"
+                    ngModel required #password=ngModel>
+            </div>
+            <!--confirm password -->
+            <div class="form-group">
+                <label>Confirm Password :</label>
+                <input class="form-control form-control-sm" maxlength="11" type="password" id="confirmpassword"
+                    name="confirmpassword" ngModel required #confirmpassword=ngModel>
+                <span style="color:red;" class="help-block"
+                    *ngIf="!(confirmpassword.value==password.value) && confirmpassword.touched">Not match</span>
+            </div>
+            <!--Phone -->
+            <div class="form-group">
+                <label>Phone Number :</label>
+                <input class="form-control form-control-sm" maxlength="11" type="text" id="phone" name="phone"
+                    placeholder="Mobile Number" ngModel required>
+            </div>
+            <!--gender -->
+            <div class="form-group" id="genderdiv">
+                <label>Gender :</label>
+                <select class="form-control form-control-sm" id="gender" name="gender" ngModel required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <!--birth -->
+            <div class="form-group">
+                <label>Birth Date :</label>
+                <input class="form-control form-control-sm" maxlength="11" type="text" id="birthday" name="birthday"
+                    placeholder="MM/DD/YYYY" ngModel required>
+            </div>
+            <!--account type -->
+            <div class="form-group" id="accounttypediv">
+                <label>Account type :</label>
+                <select class="form-control form-control-sm" id="userType" name="userType" ngModel required>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Patient">Patient</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <br>
+                <button class="btn nextButton" id="7mada" type="submit" [disabled]="!f1.valid">Sign Up</button>
+            </div>
+        </form>
     </div>
-<!--email -->
-    <div class="form-group">
-        <label>E-mail :</label>
-        <input class = "form-control form-control-sm" type="text" id="email" name="email" placeholder="example@domain.com" ngModel required email #email="ngModel">
-        <span style="color:red;" class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
-    </div>
-<!--Password -->
-    <div class="form-group">
-        <label>Password :</label>
-        <input class = "form-control form-control-sm"  maxlength="11" type="text" id="password" name="password" ngModel required #password=ngModel>
-    </div>
-<!--confirm password -->
-    <div class="form-group">
-        <label>Confirm Password :</label>
-        <input class = "form-control form-control-sm"  maxlength="11" type="text" id="confirmpassword" name="confirmpassword" ngModel required #confirmpassword=ngModel>
-        <span style="color:red;" class="help-block" *ngIf="!(confirmpassword.value==password.value) && confirmpassword.touched">Not match</span>
-    </div>
-<!--Phone -->
-      <div class="form-group">
-          <label>Phone Numebr :</label>
-          <input class = "form-control form-control-sm"  maxlength="11" type="text" id="phone" name="phone" placeholder="Mobile Number" ngModel required>
-      </div>
-<!--gender -->
-      <div class="form-group" id = "genderdiv">
-          <label>Gender :</label>
-          <select class = "form-control form-control-sm" id="gender" name="gender" ngModel required>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-      </div>
-<!--birth -->
-      <div class="form-group">
-          <label>Birth Date :</label>
-          <input class = "form-control form-control-sm"  maxlength="11" type="text" id="birthday" name="birthday" placeholder="DD/MM/YY" ngModel required>
-      </div>
-<!--account type -->
-      <div class="form-group" id = "accounttypediv">
-          <label>Account type :</label>
-          <select class = "form-control form-control-sm" id="userType" name="userType" ngModel required>
-          <option value="Doctor">Doctor</option>
-          <option value="Patient">Patient</option>
-        </select>
-      </div>
-      <div class="text-center">
-        <br>
-        <button class="btn nextButton" id = "7mada" type="submit" [disabled]="!f1.valid">Sign Up</button>
-      </div>
-  </form>
-
-  <button (click)="test()">hhhh</button>
-</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="form.js"> </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

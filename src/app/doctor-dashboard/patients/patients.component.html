@@ -1,0 +1,21 @@
+<h2 class="m-4 font-weight-bold">Browse Your Patients</h2>
+
+
+
+<div class="m-3">
+  <table class="table table-hover mx-auto">
+    <thead class="text-white" style="background-color:#C70039;">
+      <tr>
+        <th scope="col">Name</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let patient of patients'>
+        <th style="cursor: pointer;" (click)="goToPatient(patient.basicInfo._id)" scope="row">{{patient.basicInfo.name}}</th>
+      <tr>
+    </tbody>
+  </table>
+
+</div>

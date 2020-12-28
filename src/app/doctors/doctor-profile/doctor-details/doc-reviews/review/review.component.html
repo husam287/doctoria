@@ -1,9 +1,11 @@
-<div class="card text-center mb-5">
+<div>
+<div class="card text-center mb-5" *ngFor = "let review of reviews">
     <div class="card-body">
         <div class="card-title">
-            <app-stars [rate]="4"></app-stars>
+            <app-stars [rate]="review.rate"></app-stars>
         </div>
-      <p class="card-text">Doctor, You are great. Thank you!!!</p>
-      <p class="card-text"><small class="text-muted">2020/03/20</small></p>
+      <p class="card-text" [innerHTML]='review.comment'></p>
+      <p class="card-text"><small class="text-muted">{{review.createdAt}}</small></p>
     </div>
-
+</div>
+</div>

@@ -1,24 +1,24 @@
 <h4 class="pinkColor text-center font-weight-bolder mb-3">Search</h4>
-<form>
+<form #search="ngForm" (submit)="onSubmit(search)">
   <div class="input-group input-group-lg mb-3">
-    <select class="custom-select border-primary">
-      <option selected>Search By</option>
+    <select ngModel="1" #searchby="ngModel" name="searchby" class="custom-select border-primary">
+      <option value="1" hidden>Search By</option>
       <option value="name">Name</option>
       <option value="area">Area</option>
-      <option value="Specialization">Specialization</option>
+      <option value="speciality">Speciality</option>
     </select>
   </div>
 
-  <div class="input-group mb-3">
-    <input type="text" class="form-control border-primary rounded-pill" placeholder="Name">
+  <div *ngIf="searchby.value==='name'" class="input-group mb-3">
+    <input ngModel name="name" type="text" class="form-control border-primary rounded-pill" placeholder="Name">
     <div class="input-group-append">
       <button class="btn rounded-circle ml-2 btn-outline-primary" type="submit"><i class="fa fa-search pinkColor"></i></button>
     </div>
   </div>
 
-  <div class="input-group mb-3">
-    <select class="custom-select border-primary rounded-pill">
-      <option selected>Area</option>
+  <div *ngIf="searchby.value==='area'" class="input-group mb-3">
+    <select ngModel="1" name="area" class="custom-select border-primary rounded-pill">
+      <option value="1" hidden>Area</option>
       <option value="cairo">Cairo</option>
       <option value="giza">Giza</option>
       <option value="alexandria">Alexandria</option>
@@ -40,9 +40,9 @@
     </div>
   </div>
 
-  <div class="input-group mb-3">
-    <select class="custom-select border-primary rounded-pill">
-      <option selected>Specialization</option>
+  <div *ngIf="searchby.value==='speciality'" class="input-group mb-3">
+    <select ngModel="1" name="speciality" class="custom-select border-primary rounded-pill">
+      <option value="1" hidden>Specialization</option>
       <option value="Dermatology">Dermatology (Skin)</option>
       <option value="Dentistry">Dentistry (Teeth)</option>
       <option value="Psychiatry">Psychiatry (Mental, Emotional or Behavioral Disorders)</option>

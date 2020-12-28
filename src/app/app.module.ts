@@ -1,10 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { SidebarComponent } from './doctor-dashboard/sidebar/sidebar.component';
+import { PatientsComponent } from './doctor-dashboard/patients/patients.component';
+import { AppointmentsComponent } from './doctor-dashboard/appointments/appointments.component';
+import { AllComponent } from './doctor-dashboard/appointments/all/all.component';
+import { PendingComponent } from './doctor-dashboard/appointments/pending/pending.component';
+import { CompletedComponent } from './doctor-dashboard/appointments/completed/completed.component';
+import { ReferralsComponent } from './doctor-dashboard/appointments/referrals/referrals.component';
+import { DocTimeslotsComponent } from './doctor-dashboard/doc-timeslots/doc-timeslots.component';
+import { StatisticsComponent } from './doctor-dashboard/statistics/statistics.component';
 import { DoctorProfileComponent } from './doctors/doctor-profile/doctor-profile.component';
 import { DoctorCardComponent } from './doctors/doctor-profile/doctor-card/doctor-card.component';
 import { DoctorDetailsComponent } from './doctors/doctor-profile/doctor-details/doctor-details.component';
@@ -27,16 +37,34 @@ import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { PatientProfileComponent } from './patient-profile/patient-profile.component';
-
 import { CardsComponent } from './doctors/cards/cards.component';
 import { FilterComponent } from './doctors/filter/filter.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientCardComponent } from './patient-profile/patient-card/patient-card.component';
+import { EditDocBasicComponent } from './doctor-dashboard/edit-doc-basic/edit-doc-basic.component';
+import { EditDocSpecialComponent } from './doctor-dashboard/edit-doc-special/edit-doc-special.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { SidebaarComponent } from './patient-profile/sidebaar/sidebaar.component';
+import { EditBasicComponent } from './patient-profile/edit-basic/edit-basic.component';
+import { EditPatientComponent } from './patient-profile/edit-patient/edit-patient.component';
+import { HistoryComponent } from './patient-profile/history/history.component';
+import { PatAppointmentsComponent } from './patient-profile/pat-appointments/pat-appointments.component';
+import { AuthInterceptorService } from 'src/app/http.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DoctorDashboardComponent,
+    HomeComponent,
+    SidebarComponent,
+    PatientsComponent,
+    AppointmentsComponent,
+    AllComponent,
+    PendingComponent,
+    CompletedComponent,
+    ReferralsComponent,
+    DocTimeslotsComponent,
+    StatisticsComponent,
     DoctorProfileComponent,
     DoctorCardComponent,
     DoctorDetailsComponent,
@@ -52,7 +80,6 @@ import { PatientCardComponent } from './patient-profile/patient-card/patient-car
     AdvicesComponent,
     WorkoutsComponent,
     DietComponent,
-    HomeComponent,
     EmailsComponent,
     SearchComponent,
     FooterComponent,
@@ -63,7 +90,16 @@ import { PatientCardComponent } from './patient-profile/patient-card/patient-car
     CardsComponent,
     FilterComponent,
     DoctorsComponent,
-    PatientCardComponent
+    PatientCardComponent,
+    EditDocBasicComponent,
+    PatientProfileComponent,
+		SidebaarComponent,
+		EditBasicComponent,
+		EditPatientComponent,
+    HistoryComponent,
+    AppointmentsComponent,
+    PatAppointmentsComponent,
+    EditDocSpecialComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +107,10 @@ import { PatientCardComponent } from './patient-profile/patient-card/patient-car
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

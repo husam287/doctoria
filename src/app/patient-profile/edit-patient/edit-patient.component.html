@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="text-decoration-none text-center p-3 mb-2 m-3  text-black font-weight-bold ">
+     <h2>Edit Patient Information</h2>
+
+  </div>
+  <form #form="ngForm" (submit)="onSubmit(form)" class="row g-3">
+    
+      
+    <div class="col-12">
+      <br /> <label for="inputEmail4" class="form-label mr-3">Chronic Disease:  </label>
+      <textarea class="form-control" type="text" cols="5" rows="4" id="myText" [ngModel]="chronic" name="chronicDiseases"></textarea>
+    </div>
+    <div class="col-12">
+      <br /><button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+    
+  </form>
+</div>

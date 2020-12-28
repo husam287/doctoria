@@ -1,0 +1,42 @@
+
+<div class="text-decoration-none text-center p-3 mb-2  text-black m-4 font-weight-bold">
+    <h2>Showing Appointments</h2>
+  </div>
+  <div class="row m-3">
+
+    <table class="table   table-hover mx-auto">
+
+      <thead class="text-white" style="background-color: #C70039;">
+
+        <tr>
+
+          <th scope="col">Doctor</th>
+
+          <th scope="col">Date</th>
+
+          <th scope="col">Completed</th>
+
+          <th scope="col">Referred</th>
+
+          <th scope="col"></th>
+
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr  style="cursor: pointer;" *ngFor="let appo of appointments;let i=index">
+          <th (click)="goToDoctor(appo.doctor.basicInfo._id)" scope="row">{{appo.doctor.basicInfo.name}}</th>
+          <td (click)="goToDoctor(appo.doctor.basicInfo._id)">{{appo.details.date}}</td>
+          <td (click)="goToDoctor(appo.doctor.basicInfo._id)">{{appo.details.completed?'Yes':'No'}}</td>
+          <td (click)="goToDoctor(appo.doctor.basicInfo._id)">{{appo.details.referred?'Yes':'No'}}</td>
+          <td>
+            <button type="button" class="btn btn-danger" [disabled]="appo.details.completed" (click)="cancelAppointment(appo.details._id,i)">Cancel</button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+
