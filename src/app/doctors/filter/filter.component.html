@@ -1,86 +1,50 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
 
-    <!-- <h3 style="margin-left: 20px;color: rgb(0, 0, 0);">Filter:</h3> -->
 
-<!-- <div class="row">
-    <div class="dropdown city col-sm-4 ">
-      <button type="button" class="btn btn-primary dropdown-toggle fas fa-city" data-toggle="dropdown">
-        City
-      </button>
+  <div class="card bg-primary text-light">
+    <h5 class="card-header"><i class="fas fa-filter ml-4"></i> <span class="ml-3 font-weight-bold">Filter</span></h5>
+    <div class="card-body">
+      <select [(ngModel)]="area" (change)="changeArea()"  name="area" class="custom-select mb-3" aria-label="Default select example">
+        <option value="" hidden>Area</option>
+        <option value="cairo">Cairo</option>
+        <option value="giza">Giza</option>
+        <option value="alexandria">Alexandria</option>
+        <option value="north Coast">North Coast</option>
+        <option value="qalyubia">Qalyubia</option>
+        <option value="gharbia">Gharbia</option>
+        <option value="menoufia">Menoufia</option>
+        <option value="fayoum">Fayoum</option>
+        <option value="el-Dakahlia">El-Dakahlia</option>
+        <option value="el-Sharqia">El-Sharqia</option>
+        <option value="el-Beheira">El-Beheira</option>
+        <option value="damietta">Damietta</option>
+        <option value="matrouh">Matrouh</option>
+        <option value="assiut">Assiut</option>
+        <option value="sohag">Sohag</option>
+      </select>
+
+      <div class="form-group">
+        <input name="name" class="form-control" (input)="changingName()" [(ngModel)]="name" placeholder="Name" type="text">
+      </div>
+
+      <select name="speciality" (change)="changeSpeciality()" [(ngModel)]="speciality" class="custom-select mb-3" aria-label="Default select example">
+        <option value="" hidden>Speciality</option>
+        <option value="Dermatology">Dermatology (Skin)</option>
+        <option value="Dentistry">Dentistry (Teeth)</option>
+        <option value="Psychiatry">Psychiatry (Mental, Emotional or Behavioral Disorders)</option>
+        <option value="Pediatrics">Pediatrics and New Born (Child)</option>
+        <option value="Neurology ">Neurology (Brain & Nerves)</option>
+        <option value="Bones">Orthopedics (Bones)</option>
+        <option value="Psychiatry">Gynaecology and Infertility</option>
+        <option value="Ear">Ear, Nose and Throat</option>
+        <option value="Cardiology">Cardiology and Vascular Disease (Heart)</option>
+        <option value="Allergy">Allergy and Immunology (Sensitivity and Immunity)</option>
+
+      </select>
       
-      <form class="dropdown-menu">
-          <input class="dropdown-item" type="checkbox" id="city1" name="city-1" value="Cairo">
-          <label for="city1">Cairo</label>
-          <input class="dropdown-item" type="checkbox" id="city2" name="city-2" value="Giza">
-          <label for="city2">Giza</label>
-          <input class="dropdown-item" type="checkbox" id="city3" name="city-3" value="Alex">
-          <label for="city3">Alex</label>
-          <input class="dropdown-item" type="checkbox" id="city4" name="city-4" value="Luxor">
-          <label for="city4">Luxor</label>
-      </form>
+      <button *ngIf="name||area||speciality" class="btn btn-danger btn-block" type="button" (click)="clear(form)">Clear Filter</button>
     </div>
-</div>   
-
-<div class="row">
-    <div class="dropdown gender col-sm-4">
-      <button type="button" class="btn btn-primary dropdown-toggle fas fa-venus-mars" data-toggle="dropdown">
-        Gender
-      </button>
-      
-      <form class="dropdown-menu">
-          <input class="dropdown-item" type="checkbox" id="gender1" name="gender-1" value="male">
-          <label for="gender1">Male</label>
-          <input class="dropdown-item" type="checkbox" id="gender2" name="gender-2" value="female">
-          <label for="gender2">Female</label>
-      </form>
   </div>
-</div>
 
-<div class="row">
-  <div class="dropdown specialty col-sm-4 ">
-    <button type="button" class="btn btn-primary dropdown-toggle fas fa-stethoscope" data-toggle="dropdown">
-      Specialty
-    </button>
-    
-    <form class="dropdown-menu">
-        <input class="dropdown-item" type="checkbox" id="specialty1" name="specialty-1" value="Surgery">
-        <label for="specialty1">Surgery</label>
-        <input class="dropdown-item" type="checkbox" id="specialty2" name="specialty-2" value="dentist">
-        <label for="specialty2">Dentist</label>
-        <input class="dropdown-item" type="checkbox" id="specialty4" name="specialty-4" value="Psychiatry">
-        <label for="specialty4">Psychiatry</label>
-        <input class="dropdown-item" type="checkbox" id="specialty3" name="specialty-3" value="ophthalmology">
-        <label for="specialty3">ophthalmology</label>
-        
-    </form>
-  </div>
-</div>    -->
+</form>
 
-
-
-
-
-<div class="card bg-primary text-light">
-  <h5 class="card-header"><i class="fas fa-filter ml-4"></i> <span class="ml-3 font-weight-bold">Filter</span></h5>
-  <div class="card-body">
-    <select class="custom-select mb-3" aria-label="Default select example">
-      <option selected>Area</option>
-      <option value="1">Cairo</option>
-      <option value="2">Giza</option>
-      <option value="3">Alex</option>
-    </select>
-    <select class="custom-select mb-3" aria-label="Default select example">
-      <option selected>Gender</option>
-      <option value="1">Male</option>
-      <option value="2">Female</option>
-    </select>
-    <select class="custom-select mb-3" aria-label="Default select example">
-      <option selected >Specialty</option>
-      <option value="1">Surgery</option>
-      <option value="2">Dentist</option>
-      <option value="2">Psychiatry</option>
-      <option value="2">ophthalmology</option>
-
-    </select>
-    
-  </div>
-</div>
