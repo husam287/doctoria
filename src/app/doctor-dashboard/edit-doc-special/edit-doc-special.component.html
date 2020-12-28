@@ -5,8 +5,8 @@
   <form class="row g-3" (ngSubmit)="onSubmit()" #f1="ngForm" >
     <div class="col-md-6">
       <div class="input-group mb-3">
-        <select class="custom-select " name="area" ngModel>
-          <option selected>Area</option>
+        <select class="custom-select" name="area" [ngModel]="user.userDetails.area?user.userDetails.area:'1'">
+          <option value="1" hidden>Area</option>
           <option value="cairo">Cairo</option>
           <option value="giza">Giza</option>
           <option value="alexandria">Alexandria</option>
@@ -29,13 +29,13 @@
     <div class="col-md-6 ">
       <div class="input-group ">
 
-        <input type="text" class="form-control" id="inputFees" placeholder="Fees" name="fees" ngModel>
+        <input type="text" class="form-control" id="inputFees" placeholder="Fees" name="fees" [ngModel]="user.userDetails.fees">
       </div>
     </div>
     <div class="col-12">
       <div class="input-group mb-3">
-        <select class="custom-select " name="speciality" ngModel>
-          <option selected>Speciality</option>
+        <select class="custom-select " name="speciality" [ngModel]="user.userDetails.speciality?user.userDetails.speciality:'1'">
+          <option hidden value="1">Speciality</option>
           <option value="Dermatology">Dermatology (Skin)</option>
           <option value="Dentistry">Dentistry (Teeth)</option>
           <option value="Psychiatry">Psychiatry (Mental, Emotional or Behavioral Disorders)</option>

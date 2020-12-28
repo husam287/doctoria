@@ -6,19 +6,19 @@
   <form class="row g-3" (ngSubmit)="onSubmit()" #f1="ngForm">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Name</label>
-      <input type="text" class="form-control" id="inputName4" name="name"ngModel>
+      <input type="text" class="form-control" id="inputName4" name="name" [ngModel]="user.name">
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Phone</label>
-      <input type="text" class="form-control" id="inputPhone4" name="phone" ngModel>
+      <input type="text" class="form-control" id="inputPhone4" name="phone" [ngModel]="user.phone">
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Birth Day</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="" name="birthday"ngModel >
+      <input type="email" class="form-control" id="inputEmail4" placeholder="" name="birthday" [ngModel]="user.birthday" >
     </div>
     <div class="col-12">
       <label for="inputAddress2" class="form-label">Address </label>
-      <input type="text" class="form-control" id="inputAddress2" name="address" placeholder="Apartment, studio, or floor" ngModel>
+      <input type="text" class="form-control" id="inputAddress2" name="address" placeholder="Apartment, studio, or floor" [ngModel]="user.address">
     </div>
     <div class="col-12">
       <br /><button type="submit" class="btn btn-primary" [disabled]="!f1.valid">Confirm</button>
