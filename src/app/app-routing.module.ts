@@ -73,8 +73,7 @@ const routes: Routes = [
       { path: 'appointments', component: PatAppointmentsComponent },
       { path: 'history', component: HistoryComponent },
       { path: 'edit-basic', component: EditBasicComponent },
-      { path: 'edit-patient', component: EditPatientComponent },
-      { path: 'home', component: HomeComponent }
+      { path: 'edit-patient', component: EditPatientComponent }
 
     ]
   }

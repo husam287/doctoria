@@ -6,17 +6,14 @@
          <a [routerLink]="['card']" routerLinkActive="router-link-active"
             class="text-white list-group-item list-group-item-action blueBg">Card</a>
 
-         <a [routerLink]="['home']" routerLinkActive="router-link-active"
-            class="text-white list-group-item list-group-item-action blueBg">Home</a>
-
-         <a [routerLink]="['appointments']" routerLinkActive="router-link-active"
+         <a [routerLink]="['appointments']" routerLinkActive="router-link-active" *ngIf="id === currentuserid"
             class="text-white list-group-item list-group-item-action blueBg">Appointments</a>
 
-         <a [routerLink]="['edit-basic']" routerLinkActive="router-link-active"
+         <a [routerLink]="['edit-basic']" routerLinkActive="router-link-active" *ngIf="id === currentuserid"
             class="text-white list-group-item list-group-item-action blueBg">Edit Basic
             Info</a>
 
-         <a [routerLink]="['edit-patient']" routerLinkActive="router-link-active"
+         <a [routerLink]="['edit-patient']" routerLinkActive="router-link-active" *ngIf="id === currentuserid"
             class="text-white list-group-item list-group-item-action blueBg">Edit Patient
             Info</a>
 
