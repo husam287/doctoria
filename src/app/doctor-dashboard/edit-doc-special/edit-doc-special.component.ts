@@ -35,9 +35,12 @@ export class EditDocSpecialComponent implements OnInit,OnDestroy {
     const post: Doctor=this.editdoc2form.value;
     this.http.put('http://localhost:8080/api/doctors/my-profile/edit-secondary-info', post).toPromise()
     .then((data) =>{
-      this.user.userDetails.area=post.area;
-      this.user.userDetails.fees=post.fees;
-      this.user.userDetails.speciality=post.speciality;
+      const opject1 ={
+        area:post.area,
+        fees:post.fees,
+        speciality:post.speciality
+      }
+      this.user.userDetails=opject1;
       this.authService.currentUserData.next(this.user);
 
       console.log('succ:',data);
