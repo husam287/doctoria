@@ -1,8 +1,8 @@
+<div>
+  <h2 class="m-4 font-weight-bold">Edit Your Professional Info</h2>
+</div>
 <div class="container-fluid">
-  <div class="text-decoration-none text-center p-3 mb-2 m-3  text-black font-weight-bold ">
-    <h2>Edit Doctor Information</h2>
-  </div>
-  <form class="row g-3" (ngSubmit)="onSubmit()" #f1="ngForm" >
+  <form class="row g-3" (ngSubmit)="onSubmit()" #f1="ngForm">
     <div class="col-md-6">
       <div class="input-group mb-3">
         <select class="custom-select" name="area" [ngModel]="user.userDetails?user.userDetails.area:'1'">
@@ -29,7 +29,8 @@
     <div class="col-md-6 ">
       <div class="input-group ">
 
-        <input type="text" class="form-control" id="inputFees" placeholder="Fees" name="fees" [ngModel]="user.userDetails? user.userDetails.fees:''">
+        <input type="text" class="form-control" id="inputFees" placeholder="Fees" name="fees"
+          [ngModel]="user.userDetails? user.userDetails.fees:''">
       </div>
     </div>
     <div class="col-12">

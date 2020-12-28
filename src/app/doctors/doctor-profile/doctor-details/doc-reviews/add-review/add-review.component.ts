@@ -58,6 +58,8 @@ export class AddReviewComponent implements OnInit,OnDestroy {
     this.http.post('http://localhost:8080/api/patients/make-review/'+id, review).toPromise()
     .then((data) =>{
       console.log('succ:',data);
+      this.closeButton.nativeElement.click();
+
     })
     .catch(err =>{
       console.log('error:',err);

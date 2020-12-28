@@ -44,6 +44,10 @@ export class EditDocSpecialComponent implements OnInit,OnDestroy {
       this.authService.currentUserData.next(this.user);
 
       console.log('succ:',data);
+
+      alert("Data Modified Successfully")
+
+
     })
     .catch(err =>{
       console.log('error:',err);
