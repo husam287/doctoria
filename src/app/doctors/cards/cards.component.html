@@ -1,6 +1,6 @@
 <!-- card1 -->
 
-<div *ngFor="let doctor of doctors" class="mb-5">
+<div style="cursor: pointer;" *ngFor="let doctor of doctors" class="mb-5">
     <app-doctor-card [doctor]="doctor"(click)="goToProfile(doctor.basicInfo._id)"></app-doctor-card>
 </div>
 

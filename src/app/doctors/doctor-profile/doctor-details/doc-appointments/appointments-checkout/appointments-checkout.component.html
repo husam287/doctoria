@@ -44,18 +44,27 @@
 
 
         <!-- Payment -->
-        <div *ngIf="wantToPay" class="row text-center">
+        <div *ngIf="wantToPay" class="row text-center justify-content-center">
           <!-- Cash Pay -->
-          <div class="col-6">
+          <div class="col-2">
             <button class="btn-warning rounded-pill font-weight-bold py-0 mb-1" (click)="payWithCash()">Pay with Cash</button>
             <div>
               <i class="fas fa-handshake text-dark mr-1"></i>
               <i class="fas fa-wallet text-dark"></i>
             </div>
           </div>
+          <div *ngIf="wantToPay" class="row text-center">
+            <!-- Cash Pay -->
+            <div class="col-8">
+              <button class="btn-danger rounded-pill font-weight-bold py-0 mb-1" (click)="payWithCash()">Emergency Reservation</button>
+              <div>
+                <i class="fas fa-ambulance text-dark mr-1"></i>
+                <i class="fas fa-wallet text-dark"></i>
+              </div>
+            </div>
 
           <!-- Paypal online Pay -->
-          <div class="col-6">
+          <div class="col-2">
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_xclick">
               <input type="hidden" name="business" value="husam287@hotmail.com">
