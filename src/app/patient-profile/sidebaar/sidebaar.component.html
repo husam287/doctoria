@@ -3,21 +3,21 @@
    <div class="normalBlueBg text-white border-right" id="sidebar-wrapper">
       <div class="sidebar-heading"> </div>
       <div class="text-white list-group list-group-flush">
-         <a [routerLink]="['card']" routerLinkActive="router-link-active"
+         <a [routerLink]="['card']" routerLinkActive="active"
             class="text-white list-group-item list-group-item-action blueBg">Card</a>
 
-         <a [routerLink]="['appointments']" routerLinkActive="router-link-active" *ngIf="id === currentuserid"
+         <a [routerLink]="['appointments']" routerLinkActive="active" *ngIf="showPrivateStuff"
             class="text-white list-group-item list-group-item-action blueBg">Appointments</a>
 
-         <a [routerLink]="['edit-basic']" routerLinkActive="router-link-active" *ngIf="id === currentuserid"
+         <a [routerLink]="['edit-basic']" routerLinkActive="active" *ngIf="showPrivateStuff"
             class="text-white list-group-item list-group-item-action blueBg">Edit Basic
             Info</a>
 
-         <a [routerLink]="['edit-patient']" routerLinkActive="router-link-active" *ngIf="id === currentuserid"
+         <a [routerLink]="['edit-patient']" routerLinkActive="active" *ngIf="showPrivateStuff"
             class="text-white list-group-item list-group-item-action blueBg">Edit Patient
             Info</a>
 
-         <a [routerLink]="['history']" routerLinkActive="router-link-active"
+         <a [routerLink]="['history']" routerLinkActive="active"
             class="text-white list-group-item list-group-item-action blueBg">History</a>
       </div>
    </div>

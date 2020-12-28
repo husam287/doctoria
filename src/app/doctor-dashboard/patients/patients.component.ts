@@ -13,7 +13,7 @@ import { Patient } from '../../models/Patient.model';
 export class PatientsComponent implements OnInit {
   patients:Patient[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private route:Router) { }
 
   ngOnInit(): void {
 
@@ -26,9 +26,10 @@ export class PatientsComponent implements OnInit {
       console.log('error:',err);
 
   })
+  }
 
-
-
+  goToPatient(patientId:string){
+    this.route.navigate(['patients',patientId,'card']);
   }
 
 }

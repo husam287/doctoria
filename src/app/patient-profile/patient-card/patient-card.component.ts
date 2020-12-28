@@ -12,17 +12,12 @@ export class PatientCardComponent implements OnInit {
 
 	patient: Patient
 
-	constructor(private route: Router, private http: HttpClient, private route1: ActivatedRoute) {
-
-		this.route1.params
-			.subscribe(params => console.log("params: ", params));
-
-	}
+	constructor(private route: Router, private http: HttpClient, private route1: ActivatedRoute) {}
 
 	ngOnInit(): void {
 
-		const id = this.route1.snapshot.parent.params['id'];
-		console.log("id is: ", id);
+		const id = this.route1.parent.snapshot.params['id'];
+		
 		this.http.get<Patient>('http://localhost:8080/api/patients/' + id).toPromise()
 			.then((patientdata) => {
 				console.log('succ:', patientdata);

@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-hover">
   <thead style="background-color:#C70039;">
     <tr>
       <th scope="col" style="color: white">Patient</th>
@@ -13,15 +13,15 @@
     <tr *ngIf="appointments.length===0">
       <th>No Appointment At The Moment</th>
     </tr>
-    <tr *ngFor="let app of appointments;let i =index">
-      <th scope="row">{{app.patient.basicInfo.name}}</th>
-      <td>{{app.date}}</td>
+    <tr style="cursor: pointer;"  *ngFor="let app of appointments;let i =index">
+      <th (click)="goToPatient(app.patient.basicInfo._id)" scope="row">{{app.patient.basicInfo.name}}</th>
+      <td (click)="goToPatient(app.patient.basicInfo._id)" >{{app.date}}</td>
       <td>
-        <button (click)="markCompleted(app.completed,app._id,i)" class="btn btn-success">
-          {{app.completed? 'Yes':'No'}}
+        <button (click)="markCompleted(app.completed,app._id,i)" [ngClass]="app.completed? 'btn-success':'btn-danger'" class="btn">
+          {{app.completed? 'Completed':'Mark as Completed'}}
         </button>
       </td>
-      <td>
+      <td (click)="goToPatient(app.patient.basicInfo._id)" >
         {{app.referred? 'Yes':'No'}}
       </td>
       <td>

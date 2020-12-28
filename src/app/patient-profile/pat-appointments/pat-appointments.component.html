@@ -14,42 +14,25 @@
 
           <th scope="col">Date</th>
 
+          <th scope="col">Completed</th>
+
+          <th scope="col">Referred</th>
+
           <th scope="col"></th>
 
         </tr>
 
       </thead>
-
       <tbody>
-
-        <tr>
-
-          <th scope="row">Ahmed</th>
-
-          <td>12/7/2020</td>
-
+        <tr  style="cursor: pointer;" *ngFor="let appo of appointments;let i=index">
+          <th (click)="goToDoctor(appo.doctor.basicInfo._id)" scope="row">{{appo.doctor.basicInfo.name}}</th>
+          <td (click)="goToDoctor(appo.doctor.basicInfo._id)">{{appo.details.date}}</td>
+          <td (click)="goToDoctor(appo.doctor.basicInfo._id)">{{appo.details.completed?'Yes':'No'}}</td>
+          <td (click)="goToDoctor(appo.doctor.basicInfo._id)">{{appo.details.referred?'Yes':'No'}}</td>
           <td>
-
-            <button type="button" class="btn btn-primary">Cancel</button>
-
+            <button type="button" class="btn btn-danger" [disabled]="appo.details.completed" (click)="cancelAppointment(appo.details._id,i)">Cancel</button>
           </td>
-
         </tr>
-
-        <tr>
-
-          <th scope="row">Ali</th>
-
-          <td>6/1/2021</td>
-
-          <td>
-
-            <button type="button" class="btn btn-primary">Cancel</button>
-
-          </td>
-
-        </tr>
-
       </tbody>
 
     </table>

@@ -9,11 +9,15 @@
             <i class="fa fa-phone fa-2x mr-2 pinkColor"></i>
             <span class="h5">Phone number: {{patient.basicInfo.phone}} </span>
             <hr>
-            <i class="fas fa-envelope-open-text fa-2x mr-2 pinkColor"></i>
-            <span class="h5">Email: {{patient.basicInfo.email}} </span>
+            <i class="fas fa-address-card fa-2x mr-2 pinkColor"></i>
+            <span class="h5">Address: {{ patient.basicInfo.birthday }} </span>
             <hr>
             <i class="fas fa-user-alt fa-2x mr-2 pinkColor"></i>
             <span class="h5">Date of Birth: {{ patient.basicInfo.birthday }} </span>
+            <hr>
+            <i class="fas fa-envelope-open-text fa-2x mr-2 pinkColor"></i>
+            <span class="h5">ChronicDiseases: {{patient.chronicDiseases.toString()}} </span>
+            <hr>
 
         </div>
     </div>

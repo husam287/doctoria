@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Appointment } from 'src/app/models/Appointment.model';
 import { Doctor } from 'src/app/models/Doctor.model';
 
@@ -15,7 +16,7 @@ export class AllComponent implements OnInit {
   doctors:Doctor[];
 
   @Input('filter') filter:string='All';
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private route:Router) { }
 
   ngOnInit(): void {
 
@@ -64,6 +65,10 @@ export class AllComponent implements OnInit {
       this.appointments.splice(index,1);
       alert(result.message);
     })
+  }
+
+  goToPatient(patientId){
+    this.route.navigate(['patients',patientId,'card']);
   }
 
 }

@@ -6,54 +6,29 @@
 	<table class="table   table-hover mx-auto">
 
 		<thead class="text-white" style="background-color: #C70039;">
-
 			<tr>
-
 				<th scope="col">Doctor</th>
-
 				<th scope="col">Speciality</th>
-
 				<th scope="col">Date</th>
-
 				<th>Fees</th>
-
 			</tr>
-
 		</thead>
-
 		<tbody>
+			<tr style="cursor: pointer;" *ngFor="let hist of history" (click)="goToDoctor(hist.doctor.basicInfo._id)">
 
-
-			<tr>
-
-				<th scope="row">Dr.Ahmed</th>
-
-				<td>Dentist</td>
-
-				<td>11/7/2017</td>
-
-				<td>250</td>
-
-			</tr>
-
-			<tr>
-				
 				<!-- Doctor name -->
-				<th scope="row">{{ history[0].doctor.basicInfo.name }}</th>
+				<th scope="row">{{ hist.doctor.basicInfo.name }}</th>
 
 				<!-- Doctor Speciality -->
-				<td> {{ history[0].doctor.speciality }} </td>
+				<td> {{ hist.doctor.speciality }} </td>
 
 				<!-- Date -->
-				<td>{{ history[0].date }}</td>
+				<td>{{ hist.date }}</td>
 
 				<!-- Fees -->
-				<td> {{ history[0].doctor.fees }} </td>
+				<td> {{ hist.doctor.fees }} </td>
 
 			</tr>
-
 		</tbody>
-
 	</table>
-
 </div>

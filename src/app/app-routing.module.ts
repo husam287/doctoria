@@ -68,7 +68,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'patient-profile', component: PatientProfileComponent, children: [
+    path: 'patients/:id', component: PatientProfileComponent, children: [
       { path: 'card', component: PatientCardComponent },
       { path: 'appointments', component: PatAppointmentsComponent },
       { path: 'history', component: HistoryComponent },
