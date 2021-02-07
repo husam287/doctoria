@@ -6,6 +6,7 @@ import { Doctor } from '../../models/Doctor.model';
 import { User } from '../../models/User.model';
 import { SignUpService } from 'src/app/sign-up/sign-up.service';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-edit-doc-basic',
@@ -32,7 +33,7 @@ export class EditDocBasicComponent implements OnInit,OnDestroy {
   onSubmit(){
     this.submitted=true;
     const post=this.editdocform.value;
-    this.http.put('http://localhost:8080/api/users/update-basic-info', post).toPromise()
+    this.http.put(environment.API_URL+'/users/update-basic-info', post).toPromise()
     .then((data) =>{
       console.log('succ:',data);
       this.user.name=post.name;

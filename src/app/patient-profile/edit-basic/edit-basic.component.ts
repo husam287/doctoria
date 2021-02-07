@@ -6,6 +6,7 @@ import { Patient } from 'src/app/models/Patient.model';
 import { User } from '../../models/User.model';
 import { Subscription } from 'rxjs';
 import { SignUpService } from 'src/app/sign-up/sign-up.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class EditBasicComponent implements OnInit,OnDestroy {
   onSubmit(){
     this.submitted=true;
     const post=this.editpatientform.value;
-    this.http.put('http://localhost:8080/api/users/update-basic-info', post).toPromise()
+    this.http.put(environment.API_URL+'/users/update-basic-info', post).toPromise()
     .then((data) =>{
       alert('Edit Saved!!');
     })

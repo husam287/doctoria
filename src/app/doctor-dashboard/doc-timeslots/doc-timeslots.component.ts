@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Timeslot } from 'src/app/models/Timeslot.model';
 import { User } from 'src/app/models/User.model';
 import { SignUpService } from 'src/app/sign-up/sign-up.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-doc-timeslots',
@@ -74,7 +75,7 @@ export class DocTimeslotsComponent implements OnInit,OnDestroy,AfterViewInit {
   onSubmit(){
     const timeslot:Timeslot={days:this.selectedWeekdays,slots:this.selectedSlots};
     console.log(timeslot)
-    this.http.put('http://localhost:8080/api/doctors/edit-timeslot',timeslot).toPromise()
+    this.http.put(environment.API_URL+'/doctors/edit-timeslot',timeslot).toPromise()
     .then(result=>{
       this.realTimeSlot.days=timeslot.days;
       this.realTimeSlot.slots=timeslot.slots;

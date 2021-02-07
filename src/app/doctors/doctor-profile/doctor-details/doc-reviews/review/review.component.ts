@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Doctor } from '../../../../../models/Doctor.model';
 import { Review } from '../../../../../models/Review.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-review',
@@ -22,7 +23,7 @@ export class ReviewComponent implements OnInit {
   ngOnInit(): void {
 
     const id = this.route1.parent.snapshot.params['id'];
-    this.http.get<Doctor>('http://localhost:8080/api/doctors/' + id).toPromise()
+    this.http.get<Doctor>(environment.API_URL+'/doctors/' + id).toPromise()
       .then((doctor) => {
         console.log('succ:', doctor);
         this.reviews = doctor.reviews;

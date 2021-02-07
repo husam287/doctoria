@@ -5,6 +5,7 @@ import { Subject, Subscription } from 'rxjs';
 import { Appointment } from 'src/app/models/Appointment.model';
 import { Doctor } from 'src/app/models/Doctor.model';
 import { Timeslot } from 'src/app/models/Timeslot.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-doc-appointments',
@@ -37,7 +38,7 @@ export class DocAppointmentsComponent implements OnInit, AfterViewInit,OnDestroy
 
   ngOnInit(): void {
     const id = this.route1.parent.snapshot.params['id'];
-    this.http.get<Doctor>('http://localhost:8080/api/doctors/' + id).toPromise()
+    this.http.get<Doctor>(environment.API_URL+'/doctors/' + id).toPromise()
       .then((doctor) => {
         this.doctor = doctor;
         this.timeslot = doctor.timeslot;

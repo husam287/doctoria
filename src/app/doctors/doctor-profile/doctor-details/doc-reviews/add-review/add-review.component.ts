@@ -2,6 +2,7 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
 import { Router, ActivatedRoute} from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -55,7 +56,7 @@ export class AddReviewComponent implements OnInit,OnDestroy {
     this.submitted=true;
     const post=this.reviewform.value.comment;
     const review={comment: post, rate:this.rate}
-    this.http.post('http://localhost:8080/api/patients/make-review/'+id, review).toPromise()
+    this.http.post(environment.API_URL+'/patients/make-review/'+id, review).toPromise()
     .then((data) =>{
       console.log('succ:',data);
       this.closeButton.nativeElement.click();

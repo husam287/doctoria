@@ -4,6 +4,7 @@ import { tap, take, catchError } from 'rxjs/operators';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../models/User.model';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -33,7 +34,7 @@ export class SignUpService {
 
     signUp(user1: User) {
 
-        return this.http.post('http://localhost:8080/api/users/signup', user1)
+        return this.http.post(environment.API_URL+'/users/signup', user1)
 
     }
 
@@ -53,7 +54,7 @@ export class SignUpService {
 
 
     getUserInfo(userId: string) {
-        return this.http.get<User>('http://localhost:8080/api/' + 'users/' + userId + '/get')
+        return this.http.get<User>(environment.API_URL+'/' + 'users/' + userId + '/get')
 
     }
 
@@ -125,7 +126,7 @@ export class SignUpService {
 
 
     private handelAuth(email: string, password: string) {
-        return this.http.post<AuthSignupData>('http://localhost:8080/api/users/login', { email: email, password: password })
+        return this.http.post<AuthSignupData>(environment.API_URL+'/users/login', { email: email, password: password })
             .pipe(catchError(this.handelErrors),
                 tap(result => {
                     const u = {

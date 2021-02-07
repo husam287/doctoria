@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Appointment } from 'src/app/models/Appointment.model';
 import { User } from 'src/app/models/User.model';
 import { SignUpService } from 'src/app/sign-up/sign-up.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-statistics',
@@ -23,7 +24,7 @@ export class StatisticsComponent implements OnInit,OnDestroy {
       this.users=user;
       console.log(this.refers)
     })
-    this.http.get<Appointment[]>('http://localhost:8080/api/doctors/my-profile/my-appointments').toPromise()
+    this.http.get<Appointment[]>(environment.API_URL+'/doctors/my-profile/my-appointments').toPromise()
     .then((appointments)=>{
       this.appointments=appointments;
     })

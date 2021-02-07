@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from 'src/app/models/Patient.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-patient-card',
@@ -18,7 +19,7 @@ export class PatientCardComponent implements OnInit {
 
 		const id = this.route1.parent.snapshot.params['id'];
 		
-		this.http.get<Patient>('http://localhost:8080/api/patients/' + id).toPromise()
+		this.http.get<Patient>(environment.API_URL+'/patients/' + id).toPromise()
 			.then((patientdata) => {
 				console.log('succ:', patientdata);
 				this.patient = patientdata;

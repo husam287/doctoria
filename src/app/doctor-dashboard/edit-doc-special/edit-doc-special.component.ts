@@ -6,6 +6,7 @@ import { Doctor } from '../../models/Doctor.model';
 import { SignUpService } from 'src/app/sign-up/sign-up.service';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/User.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-edit-doc-special',
@@ -33,7 +34,7 @@ export class EditDocSpecialComponent implements OnInit,OnDestroy {
   onSubmit(){
     this.submitted=true;
     const post: Doctor=this.editdoc2form.value;
-    this.http.put('http://localhost:8080/api/doctors/my-profile/edit-secondary-info', post).toPromise()
+    this.http.put(environment.API_URL+'/doctors/my-profile/edit-secondary-info', post).toPromise()
     .then((data) =>{
       const opject1 ={
         area:post.area,

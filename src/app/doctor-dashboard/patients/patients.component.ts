@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { Patient } from '../../models/Patient.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-patients',
@@ -17,7 +18,7 @@ export class PatientsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get<Patient[]>('http://localhost:8080/api/doctors/my-profile/my-patients').toPromise()
+    this.http.get<Patient[]>(environment.API_URL+'/doctors/my-profile/my-patients').toPromise()
     .then((patients) =>{
       console.log('succ:',patients);
        this.patients = patients;

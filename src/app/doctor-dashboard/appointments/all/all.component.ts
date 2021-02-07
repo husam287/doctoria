@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Appointment } from 'src/app/models/Appointment.model';
 import { Doctor } from 'src/app/models/Doctor.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-all',
@@ -20,7 +21,7 @@ export class AllComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get<Appointment[]>('http://localhost:8080/api/doctors/my-profile/my-appointments').toPromise()
+    this.http.get<Appointment[]>(environment.API_URL+'/doctors/my-profile/my-appointments').toPromise()
     .then(appointments=>{
       this.appointments=appointments.filter(value=>{
         
@@ -42,7 +43,7 @@ export class AllComponent implements OnInit {
       });
     })
 
-    this.http.get<Doctor[]>('http://localhost:8080/api/doctors/all').toPromise()
+    this.http.get<Doctor[]>(environment.API_URL+'/doctors/all').toPromise()
     .then((doctors)=>{
       this.doctors=doctors;
     })

@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SearchService } from 'src/app/home/search.service';
 import { Doctor } from 'src/app/models/Doctor.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-filter',
@@ -19,7 +20,7 @@ export class FilterComponent implements OnInit {
   constructor(private http: HttpClient, private searchService: SearchService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.http.get<Doctor[]>('http://localhost:8080/api/doctors/all').toPromise()
+    this.http.get<Doctor[]>(environment.API_URL+'/doctors/all').toPromise()
       .then((doctors) => {
         this.realDoctorsArray = doctors;
         this.searchService.doctors.next(doctors);
